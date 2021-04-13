@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <string>
 #include <conio.h>
 #include <Windows.h>
@@ -36,7 +36,7 @@ public:
 		system("cls");
 		cout << c * d / 2 << "\n";
 		int resulttt = c * d / 2;
-		ofstream file("ressult of triangle.txt");
+		ofstream file("result of triangle.txt");
 		file << resulttt;
 		MessageBox(NULL, L"Result saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
 		system("pause");

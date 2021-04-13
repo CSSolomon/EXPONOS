@@ -72,6 +72,7 @@ int main() {
 	if (setup == "setup" || setup == "Setup") {
 
 		Setup set;
+		set.setup();
 	}
 	else {
 		return 0;
@@ -116,7 +117,7 @@ int main() {
 		}
 		if (oobe == "credits" || oobe == "Credits") {
 			system("cls");
-			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC		);
+			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			cout << "Made by Angelo Petrai 2021\n";
 			cout << "Thank you for trying out my application\n";
 			cout << "Press any key to go back to the main menu . . .\n";
