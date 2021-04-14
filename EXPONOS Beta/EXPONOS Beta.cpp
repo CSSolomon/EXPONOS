@@ -43,9 +43,6 @@ int main() {
 		}
 
 
-
-
-
 		cout << "Set Username\n";
 		cin >> username;
 		PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
@@ -100,7 +97,7 @@ int main() {
 		PlaySound(TEXT("Windows_Logon_Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	B:
 		cout << "Welcome " << username  << "\n";
-		cout << "Internet\nCalculator\nCredits\nTexter\n";
+		cout << "Internet\nCalculator\nCredits\nTexter\nReport a bug or give feedback\n";
 		cin >> oobe;
 		if (oobe == "texter" || oobe == "Texter") {
 			texter text;
@@ -117,7 +114,7 @@ int main() {
 		}
 		if (oobe == "credits" || oobe == "Credits") {
 			system("cls");
-			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 			cout << "Made by Angelo Petrai 2021\n";
 			cout << "Thank you for trying out my application\n";
 			cout << "Press any key to go back to the main menu . . .\n";
@@ -131,10 +128,19 @@ int main() {
 			cout << "Area  " << "Multiplication\n" << "Division ";
 			string opt;
 			cin >> opt;
+			if (opt == "division" || opt == "Division") {
+				system("cls");
+				Division divide;
+				divide.division();
+				system("cls");
+				goto B;
+			}
 			if (opt == "multiplication" || opt == "Multiplication") {
 				system("cls");
 				multiplication multi;
+				
 				system("cls");
+				goto B;
 				string optios;
 				
 			}

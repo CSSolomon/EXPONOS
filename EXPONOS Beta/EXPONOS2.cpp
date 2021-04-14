@@ -274,6 +274,237 @@ public:
 	}
 };
 
+class Division {
+public:
+	
+		void division() {
+			int a, b;
+			cout << "How many numbers would you like to divide (min 2 - max 10) \n";
+			cin >> a;
+
+			switch (a) {
+			case 2:
+				int n, u, m, l, v, j, h, y, z, k;
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << n / u << "\n";
+				system("pause");
+
+				break;
+			case 3:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << n / u / m << "\n";
+				system("pause");
+
+				break;
+			case 4:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << n / u / m / l << "\n";
+				system("pause");
+
+				break;
+			case 5:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> v;
+				system("cls");
+				cout << n / u / m / l / v << "\n";
+				system("pause");
+
+				break;
+			case 6:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << n / u / m / l / v / j << "\n";
+				system("pause");
+				break;
+			case 7:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << n / u / m / l / v / h / j << "\n";
+				system("pause");
+				break;
+			case 8:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << n / u / m / l / v / h / j / y << "\n";
+				system("pause");
+				break;
+			case 9:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << "Enter ninth number: ";
+				cin >> z;
+
+				system("cls");
+				cout << n / u / m / l / v / h / y / j / z << "\n";
+				system("pause");
+				break;
+			case 10:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << "Enter ninth number: ";
+				cin >> z;
+				system("cls");
+				cout << "Enter tenth number: ";
+				cin >> k;
+
+				system("cls");
+				cout << n / u / m / l / v / h / y / j / z / k << "\n";
+				system("pause");
+				break;
+			}
+		}
+};
+
 class egg {
 public:
 	void setv(string x) {

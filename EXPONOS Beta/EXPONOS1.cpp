@@ -31,7 +31,7 @@ public:
 			cout << "Installing . . . \n";
 			Sleep(2000);
 			system("cls");
-			cout << "Solve mathamatic problems faster with the new calculator\n";
+			cout << "Do arithmatic faster with the new calculator\n";
 			cout << "Installing . \n";
 			Sleep(2000);
 			system("cls");
@@ -64,7 +64,7 @@ public:
 				if (ab == "^") {
 					break;
 				}
-				if (ab == "$$") {
+				if (ab == "endl") {
 					document << endl;
 				}
 				document << ab;
