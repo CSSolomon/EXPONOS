@@ -17,7 +17,7 @@ public:
 		cout << "Press any key to install EXPONOS";
 		_getch();
 		system("cls");
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 0; i++) {
 
 			cout << "Thank you for installing EXPONOS\n";
 			cout << "Installing . \n";
@@ -43,13 +43,26 @@ public:
 			cout << "Installing . . . \n";
 			Sleep(2000);
 			system("cls");
+			system("cls");
+			cout << "To give feedback or report a bug type report\n";
+			cout << "Installing . \n";
+			Sleep(2000);
+			system("cls");
+			cout << "To end a line in texter type endl\n";
+			cout << "Installing . . \n";
+			Sleep(2000);
+			system("cls");
+			cout << "EXPONOS was first released (Alpha Version) in March 2021\n";
+			cout << "Installing . . . \n";
+			Sleep(2000);
+			system("cls");
 		}
 	}
 };
 
 class texter {
 public:
-	texter() {
+	void exter() {
 		system("cls");
 		int opt;
 		cout << "Welcome to texter a powerful text edditor designed for your needs\n1. Create new document\n";
@@ -60,12 +73,15 @@ public:
 			string ab;
 			for (int i = 0; i < 999999999; i++)
 			{
-				cin >> ab;
+				A:
+				getline(cin, ab);
 				if (ab == "^") {
 					break;
 				}
 				if (ab == "endl") {
 					document << endl;
+					goto A;
+					
 				}
 				document << ab;
 			}

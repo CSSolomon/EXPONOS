@@ -53,7 +53,7 @@ public:
 
 		switch (a) {
 		case 2:
-			int n, u, m, l, v, j, h, y, z, k;
+			double n, u, m, l, v, j, h, y, z, k;
 			cout << "Enter first number: ";
 			cin >> n;
 			system("cls");
@@ -284,7 +284,7 @@ public:
 
 			switch (a) {
 			case 2:
-				int n, u, m, l, v, j, h, y, z, k;
+				double n, u, m, l, v, j, h, y, z, k;
 				cout << "Enter first number: ";
 				cin >> n;
 				system("cls");

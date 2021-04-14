@@ -68,8 +68,8 @@ int main() {
 	system("cls");
 	if (setup == "setup" || setup == "Setup") {
 
-		Setup set;
-		set.setup();
+		Setup se;
+		se.setup();
 	}
 	else {
 		return 0;
@@ -99,8 +99,18 @@ int main() {
 		cout << "Welcome " << username  << "\n";
 		cout << "Internet\nCalculator\nCredits\nTexter\nReport a bug or give feedback\n";
 		cin >> oobe;
+		if (oobe == "bug" || oobe == "report" || oobe == "feedback") {
+			system("cls");
+			system("start https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SfovCZUN0ZIM1c3TTQ2SjYyMUlMQU5DVkJISDNKWC4u");
+			cout << "Thank you for filling the form, press any key to go back to the main menu\n";
+			_getch();
+			system("cls");
+			goto B;
+
+		}
 		if (oobe == "texter" || oobe == "Texter") {
 			texter text;
+			text.exter();
 			goto B;
 		}
 		if (oobe == "HAND") {
