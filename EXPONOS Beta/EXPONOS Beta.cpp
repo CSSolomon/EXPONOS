@@ -6,6 +6,9 @@
 #include "EXPONOS1.cpp"
 #include "EXPONOS2.cpp"
 #include <ctime>
+#include <time.h>
+#include <chrono>
+#pragma warning(disable : 4996)
 
 
 using namespace std;
@@ -13,13 +16,16 @@ using namespace std;
 
 int main() {
 
+
+
+
 	SetConsoleTitleA("EXPONOS");
 	string username;
 	string yn;
 	cout << "Want to set a password? Y/N\n";
 	cin >> yn;
 	system("cls");
-	
+
 	if (yn == "y" || yn == "Y") {
 		string pass;
 		string passs;
@@ -96,9 +102,15 @@ int main() {
 	C:
 		PlaySound(TEXT("Windows_Logon_Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	B:
-		cout << "Welcome " << username  << "\n";
+
+		cout << "Welcome " << username << "\n";
 		cout << "Internet\nCalculator\nCredits\nTexter\nReport a bug or give feedback\n";
 		cin >> oobe;
+		if (oobe == "time" || oobe == "Time") {
+			Time time;
+			time.timee();							// <-- May be used for future development
+			goto B;
+		}
 		if (oobe == "bug" || oobe == "report" || oobe == "feedback") {
 			system("cls");
 			system("start https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SfovCZUN0ZIM1c3TTQ2SjYyMUlMQU5DVkJISDNKWC4u");
@@ -148,11 +160,11 @@ int main() {
 			if (opt == "multiplication" || opt == "Multiplication") {
 				system("cls");
 				multiplication multi;
-				
+
 				system("cls");
 				goto B;
 				string optios;
-				
+
 			}
 			if (opt == "Area" || opt == "area") {
 				string str;
@@ -203,6 +215,7 @@ int main() {
 	}
 
 }
+
 		
 	
 

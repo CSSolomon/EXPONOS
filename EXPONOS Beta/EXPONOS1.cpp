@@ -5,7 +5,8 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
-
+#include <time.h>
+#pragma warning(disable : 4996)
 
 using namespace std;
 
@@ -98,5 +99,23 @@ public:
 
 	}
 
+};
+
+class Time {
+public:
+											// <-- May be used for future developement
+	void timee() {
+		time_t t = time(0);
+		char* date_time = ctime(&t);
+		int i = 0;
+		while (i != 10) {
+			system("cls");
+			
+			cout << date_time;
+			Sleep(2000);
+			i++;
+			
+		}
+	}
 };
 
