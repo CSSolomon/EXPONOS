@@ -44,6 +44,55 @@ public:
 	}
 };
 
+class Circle {
+private:
+	double radius;
+	double pi = 3.14;
+public:
+	friend void circle(Circle c) {
+		
+		system("cls");
+		cout << "Radius";
+		cin >> c.radius;
+		system("cls");
+		cout << c.pi * c.radius * c.radius << "\n";
+		double resultt = c.pi * c.radius * c.radius;
+		system("pause");
+		ofstream re("result of circle.txt");
+		re << resultt;
+		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+	}
+};
+
+class Trapezoid {
+private:
+	double a, b, h;
+	double c = 2;
+public:
+
+	friend void trapezoid(Trapezoid trap) {
+		system("cls");
+		cout << "Base";
+		cin >> trap.a;
+		system("cls");
+		cout << "Second base ";
+		cin >> trap.b;
+		system("cls");
+		cout << "Height ";
+		cin >> trap.h;
+		system("cls");
+		cout << trap.a + trap.b / 2 * trap.h << "\n";
+		double res = trap.a + trap.b / 2 * trap.h;
+		system("pause");
+		ofstream doc("result of trapezoid.txt");
+		doc << res;
+		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+		system("cls");
+
+	}
+
+};
+
 class multiplication {
 public:
 	multiplication() {

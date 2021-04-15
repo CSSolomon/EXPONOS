@@ -69,7 +69,7 @@ int main() {
 	if (setup == "setup" || setup == "Setup") {
 
 		Setup se;
-		se.setup();
+		se.set();
 	}
 	else {
 		return 0;
@@ -157,8 +157,20 @@ int main() {
 			if (opt == "Area" || opt == "area") {
 				string str;
 				system("cls");
-				cout << "Square  Triangle\n";
+				cout << "Square  Triangle\nCircle  Trapezoid\n";
 				cin >> str;
+				if (str == "Trapezoid" || str == "trapezoid") {
+					Trapezoid trap;
+					trapezoid(trap);
+					goto B;
+				}
+				if (str == "circle" || str == "Circle") {
+					system("cls");
+					Circle c;
+					circle(c);
+					system("cls");
+					goto B;
+				}
 				if (str == "triangle" || str == "Triangle") {
 					system("cls");
 					triangle tri;

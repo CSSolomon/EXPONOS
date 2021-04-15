@@ -11,13 +11,13 @@ using namespace std;
 
 class Setup {
 public:
-	void setup() {
+	void set() {
 		cout << "Welcome to the EXPONOS Setup\n";
 		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		cout << "Press any key to install EXPONOS";
 		_getch();
 		system("cls");
-		for (int i = 0; i < 0; i++) {
+		for (int i = 0; i < 6; i++) {
 
 			cout << "Thank you for installing EXPONOS\n";
 			cout << "Installing . \n";
@@ -44,7 +44,7 @@ public:
 			Sleep(2000);
 			system("cls");
 			system("cls");
-			cout << "To give feedback or report a bug type report\n";
+			cout << "To give feedback or report a bug type 'report'\n";
 			cout << "Installing . \n";
 			Sleep(2000);
 			system("cls");
@@ -65,6 +65,7 @@ public:
 	void exter() {
 		system("cls");
 		int opt;
+		
 		cout << "Welcome to texter a powerful text edditor designed for your needs\n1. Create new document\n";
 		cin >> opt;
 		system("cls");
