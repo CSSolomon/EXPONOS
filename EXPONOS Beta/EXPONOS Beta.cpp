@@ -74,8 +74,8 @@ int main() {
 	system("cls");
 	if (setup == "setup" || setup == "Setup") {
 
-		Setup se;
-		se.set();
+		Setup se;								// <-- Setup
+		se.et();
 	}
 	else {
 		return 0;
@@ -104,9 +104,17 @@ int main() {
 	B:
 
 		cout << "Welcome " << username << "\n";
-		cout << "Internet\nCalculator\nCredits\nTexter\nReport a bug or give feedback\n";
+		cout << "Internet\nCalculator\nCredits\nTexter\nSorter\nReport a bug or give feedback\n";
 		cin >> oobe;
+		if (oobe == "sorter" || oobe == "Sorter") {
+			system("cls");
+			sorter so;									// <-- Sorter
+			so.functio();
+			system("cls");
+			goto B;
+		}
 		if (oobe == "time" || oobe == "Time") {
+
 			Time time;
 			time.timee();							// <-- May be used for future development
 			goto B;
@@ -122,23 +130,23 @@ int main() {
 		}
 		if (oobe == "texter" || oobe == "Texter") {
 			texter text;
-			text.exter();
+			text.exter();								//<-- Texter
 			goto B;
 		}
 		if (oobe == "HAND") {
 			system("cls");
-			source source;
+			source source;							//<-- HAND Easter Egg
 			goto B;
 		}
 		if (oobe == "EXPONOS" || oobe == "exponos") {
 			yfm ep;
-			goto C;
+			goto C;									//<-- EXPONOS Easter Egg
 		}
 		if (oobe == "credits" || oobe == "Credits") {
 			system("cls");
 			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 			cout << "Made by Angelo Petrai 2021\n";
-			cout << "Thank you for trying out my application\n";
+			cout << "Thank you for trying out my application\n";					//<-- Credits
 			cout << "Press any key to go back to the main menu . . .\n";
 			_getch();
 			system("cls");
@@ -149,7 +157,7 @@ int main() {
 			system("cls");
 			cout << "Area  " << "Multiplication\n" << "Division ";
 			string opt;
-			cin >> opt;
+			cin >> opt;													//<-- Calculator
 			if (opt == "division" || opt == "Division") {
 				system("cls");
 				Division divide;
@@ -208,16 +216,10 @@ int main() {
 		system("start https://google.com");
 		cout << "Press any key to go back to the main menu\n";
 
-		_getch();
+		_getch();												// <-- Internet
 		system("cls");
 		goto B;
 
 	}
 
 }
-
-		
-	
-
-
-

@@ -12,13 +12,13 @@ using namespace std;
 
 class Setup {
 public:
-	void set() {
+	void et() {
 		cout << "Welcome to the EXPONOS Setup\n";
-		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		cout << "Press any key to install EXPONOS";
 		_getch();
 		system("cls");
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 3; i++) {
 
 			cout << "Thank you for installing EXPONOS\n";
 			cout << "Installing . \n";

@@ -1,11 +1,48 @@
- #include <iostream>
+#include <iostream>
 #include <string>
 #include <conio.h>
 #include <Windows.h>
 #include <fstream>
+#include <algorithm>
 
 
 using namespace std;
+
+
+class sorter {
+public:
+	string array[100];
+
+	void functio() {
+		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl;
+		system("pause");
+		system("cls");
+		for (int i = 0; i < 100; i++)
+		{
+			cin >> array[i];
+			if (array[i] == " ") {
+				array[i] = " ";
+			}
+			if (array[i] == "^") {
+				break;
+			}
+		}
+
+		sort(begin(array), end(array));
+
+		ofstream sorted("sorted.txt");
+		system("cls");
+		for (string i : array)
+		{
+			cout << i ;
+			sorted << i;
+		}
+
+		_getch();
+		MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
+
+	}
+};
 
 class square {
 public:
@@ -13,7 +50,7 @@ public:
 		system("cls");
 		int a, b;
 		cout << "Enter Width: \n";
-		cin >> a;
+		cin >> a; 
 		system("cls");
 		cout << "Enter Length: \n";
 		cin >> b;
@@ -92,6 +129,8 @@ public:
 	}
 
 };
+
+
 
 class multiplication {
 public:
