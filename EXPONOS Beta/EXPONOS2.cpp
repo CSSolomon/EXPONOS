@@ -9,6 +9,117 @@
 using namespace std;
 
 
+class music {
+public:
+	void u() {
+	A:
+		system("cls");
+		PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		cout << "1. EXPONOS Setup\n2. Windows XP Setup\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
+		int o;
+		cin >> o;
+		system("cls");
+		if (o == 6) {
+
+		}
+		if (o == 1) {
+			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		
+			cout << "Press R to repeat  Press any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+
+				yo = _getch();
+				system("cls");
+				goto A;
+				
+
+			}
+			else {
+				goto A;
+			}
+		}
+		if (o == 2) {
+			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		
+			cout << "Press R to repeat  Press any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+				
+				
+
+
+			}
+			else {
+				goto A;
+			}
+		}
+		if (o == 3) {
+			PlaySound(TEXT("mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		
+			cout << "Press R to repeat  Press any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+				
+
+
+			}
+			else {
+				goto A;
+			}
+		}
+		if (o == 4) {
+			PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		
+			cout << "Press R to repeat  Press any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+			}
+			else {
+				goto A;
+			}
+		}
+		if (o == 5) {
+			PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		
+			cout << "Press R to repeat  Press any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+			}
+			else {
+				goto A;
+			}
+		}
+	}
+};
+
+
 class sorter {
 public:
 	string array[100];
@@ -656,4 +767,17 @@ public:
 		}
 	}
 
+};
+
+class raregg {
+public:
+	void fu() {
+		system("cls");
+		system("start project1.exe");
+	}
+
+	void ou() {
+		system("cls");
+		system("start project2.exe");
+	}
 };

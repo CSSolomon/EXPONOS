@@ -14,11 +14,14 @@ class Setup {
 public:
 	void et() {
 		cout << "Welcome to the EXPONOS Setup\n";
-		PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+		PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+
 		cout << "Press any key to install EXPONOS";
 		_getch();
 		system("cls");
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 0; i++) {
+
 
 			cout << "Thank you for installing EXPONOS\n";
 			cout << "Installing . \n";
@@ -44,7 +47,6 @@ public:
 			cout << "Installing . . . \n";
 			Sleep(2000);
 			system("cls");
-			system("cls");
 			cout << "To give feedback or report a bug type 'report'\n";
 			cout << "Installing . \n";
 			Sleep(2000);
@@ -57,6 +59,8 @@ public:
 			cout << "Installing . . . \n";
 			Sleep(2000);
 			system("cls");
+
+
 		}
 	}
 };

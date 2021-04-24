@@ -94,19 +94,56 @@ int main() {
 
 	if (rest == "Y" || rest == "y") {
 		system("cls");
-		PlaySound(TEXT("Windows_Logout_Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		cout << "Restarting . . .";
 		Sleep(2000);
-		Sleep(2000);
+		Sleep(3000);
 		system("cls");
 	C:
-		PlaySound(TEXT("Windows_Logon_Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	B:
+		system("cls");
+		cout << "Welcome " << username << "\n";															//<-- Main Menu
+		cout << "\n\n1. Internet\n2. Calculator\n3. Credits\n4. Media\n5. Texter\n6. Sorter\n7. Report a bug or give feedback\n8. Logoff\n";
+		cin >> oobe;	
+		if (oobe == "alpha1") {
+			system("cls");
+			raregg e;
+			e.fu();
+			system("cls");													//<-- alpha1 Easter egg
+			goto B;
+		}
+		if (oobe == "alpha2") {
+			system("cls");
+			raregg e;
+			e.ou();
+			system("cls");													//<-- alpha2 Easter egg
+			goto B;
+		}
+		if (oobe == "4" || oobe == "Media") {
+			music mu;
+			mu.u();																			// <-- Media
+			system("cls");
+			goto B;
+			
+		}
+		if (oobe == "8" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
+			PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			system("cls");
+			cout << "Shutting Down .";
+			Sleep(950);
+			system("cls");
+			cout << "Shutting Down . .";
+			Sleep(950);
+			system("cls");
+			cout << "Shutting Down . . .";								// <-- Shut down
+			Sleep(2500);
+			system("cls");
 
-		cout << "Welcome " << username << "\n";
-		cout << "Internet\nCalculator\nCredits\nTexter\nSorter\nReport a bug or give feedback\n";
-		cin >> oobe;
-		if (oobe == "sorter" || oobe == "Sorter") {
+		
+			
+		}
+		if (oobe == "sorter" || oobe == "6") {
 			system("cls");
 			sorter so;									// <-- Sorter
 			so.functio();
@@ -119,7 +156,7 @@ int main() {
 			time.timee();							// <-- May be used for future development
 			goto B;
 		}
-		if (oobe == "bug" || oobe == "report" || oobe == "feedback") {
+		if (oobe == "7" || oobe == "report" || oobe == "feedback") {
 			system("cls");
 			system("start https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SfovCZUN0ZIM1c3TTQ2SjYyMUlMQU5DVkJISDNKWC4u");
 			cout << "Thank you for filling the form, press any key to go back to the main menu\n";
@@ -128,7 +165,7 @@ int main() {
 			goto B;
 
 		}
-		if (oobe == "texter" || oobe == "Texter") {
+		if (oobe == "texter" || oobe == "5") {
 			texter text;
 			text.exter();								//<-- Texter
 			goto B;
@@ -142,7 +179,7 @@ int main() {
 			yfm ep;
 			goto C;									//<-- EXPONOS Easter Egg
 		}
-		if (oobe == "credits" || oobe == "Credits") {
+		if (oobe == "credits" || oobe == "3") {
 			system("cls");
 			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 			cout << "Made by Angelo Petrai 2021\n";
@@ -153,7 +190,7 @@ int main() {
 			PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			goto B;
 		}
-		else if (oobe == "Calculator" || oobe == "calculator") {
+		else if (oobe == "2r" || oobe == "calculator") {
 			system("cls");
 			cout << "Area  " << "Multiplication\n" << "Division ";
 			string opt;
@@ -211,7 +248,7 @@ int main() {
 		}
 	}
 	string menu;
-	if (oobe == "internet" || oobe == "Internet") {
+	if (oobe == "internet" || oobe == "1") {
 		system("cls");
 		system("start https://google.com");
 		cout << "Press any key to go back to the main menu\n";
