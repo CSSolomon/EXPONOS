@@ -67,39 +67,82 @@ public:
 
 class texter {
 public:
-	void exter() {
+	void te() {
 		system("cls");
 		int opt;
-		
+		ifstream test("document1.txt");
 		cout << "Welcome to texter a powerful text edditor designed for your needs\n1. Create new document\n";
+
+		if (test) {
+			cout << "2. document1.txt";
+		}
+
 		cin >> opt;
 		system("cls");
+		
 		if (opt == 1) {
-			ofstream document("document1.txt");
+			ofstream documentt("document1.txt");
 			string ab;
 			for (int i = 0; i < 999999999; i++)
 			{
-				A:
+
+
+				getline(cin, ab);
+				if (ab == "^") {
+					break;
+				}
+				if (ab == "endl") {
+					documentt << endl;
+					continue;
+
+				}
+				documentt << ab;
+			}
+			if (documentt) {
+				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+				system("pause");
+				system("cls");
+			}
+		}
+		if (opt == 2) {
+			fstream document("document1.txt");
+			if (document.is_open()) {
+				cout << document.rdbuf();
+			}
+			
+			string ab;
+			for (int i = 0; i < 999999999; i++)
+			{
+				
+				
 				getline(cin, ab);
 				if (ab == "^") {
 					break;
 				}
 				if (ab == "endl") {
 					document << endl;
-					goto A;
+					continue;
 					
 				}
 				document << ab;
 			}
+			if (document) {
+				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+				system("pause");
+				system("cls");
+			}
+		}
+		
+
 				
-				if (document) {
-					MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
-					system("pause");
-					system("cls");
-				}
+				
 			
 
-		}
+		
 
 	}
 

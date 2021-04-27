@@ -13,6 +13,8 @@
 
 using namespace std;
 
+string pass;
+string passs;
 
 int main() {
 
@@ -27,8 +29,6 @@ int main() {
 	system("cls");
 
 	if (yn == "y" || yn == "Y") {
-		string pass;
-		string passs;
 		system("cls");
 		cout << "Enter new password ";
 		cin >> pass;
@@ -65,7 +65,7 @@ int main() {
 	else {
 		return 0;
 	}
-
+	/*
 	string setup;
 	PlaySound(TEXT("Windows_Logon_Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	cout << "Welcome " << username << "\n";
@@ -88,19 +88,63 @@ int main() {
 	cout << "A restart is required in order for the setup to apply the changes . . .\n";
 	Sleep(2000);
 	cout << "Restart now? Y/N\n";
+	*/
+	string rest;
 	cin >> rest;
+	
 	string oobe;
 
+	string check;
 
 	if (rest == "Y" || rest == "y") {
 		system("cls");
-		PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		cout << "Restarting . . .";
-		Sleep(2000);
-		Sleep(3000);
-		system("cls");
+		PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		for (int i = 0; i < 2; i++)
+		{
+			cout << "Restarting . ";
+			Sleep(950);
+			system("cls");
+			cout << "Restarting . .";
+			Sleep(950);
+			system("cls");
+			cout << "Restarting . . .";
+			Sleep(1000);
+			system("cls");
+			
+		}
+		system("cls");																			
+		for (int i = 0; i < 2; i++)
+		{
+			cout << "Starting .";
+			Sleep(950);
+			system("cls");
+			cout << "Starting . . ";
+			Sleep(950);
+			system("cls");
+			cout << "Starting . . .";
+			Sleep(1000);
+			system("cls");
+		}
+
+
+
+		if (yn == "y" || yn == "Y") {
+			cout << "Enter password ";
+			cin >> check;
+			system("cls");
+
+			if (pass != check) {
+				do {
+					cout << "Incorrect!\n";
+					PlaySound(TEXT("chord.wav"), NULL, SND_SYNC);
+					cout << "Enter password\n";
+					cin >> passs;
+					system("cls");
+				} while (pass != passs);
+			}
+		}
 	C:
-		PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("Windows2000Beta3Startup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	B:
 		system("cls");
 		cout << "Welcome " << username << "\n";															//<-- Main Menu
@@ -122,13 +166,13 @@ int main() {
 		}
 		if (oobe == "4" || oobe == "Media") {
 			music mu;
-			mu.u();																			// <-- Media
+			mu.ut();																			// <-- Media
 			system("cls");
 			goto B;
 			
 		}
 		if (oobe == "8" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
-			PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			system("cls");
 			cout << "Shutting Down .";
 			Sleep(950);
@@ -139,6 +183,7 @@ int main() {
 			cout << "Shutting Down . . .";								// <-- Shut down
 			Sleep(2500);
 			system("cls");
+			return 0;
 
 		
 			
@@ -167,7 +212,7 @@ int main() {
 		}
 		if (oobe == "texter" || oobe == "5") {
 			texter text;
-			text.exter();								//<-- Texter
+			text.te();								//<-- Texter
 			goto B;
 		}
 		if (oobe == "HAND") {
@@ -190,19 +235,19 @@ int main() {
 			PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			goto B;
 		}
-		else if (oobe == "2r" || oobe == "calculator") {
+		else if (oobe == "2" || oobe == "calculator") {
 			system("cls");
-			cout << "Area  " << "Multiplication\n" << "Division ";
+			cout << "1. Area  " << "2. Multiplication\n" << "3. Division ";
 			string opt;
 			cin >> opt;													//<-- Calculator
-			if (opt == "division" || opt == "Division") {
+			if (opt == "division" || opt == "3") {
 				system("cls");
 				Division divide;
 				divide.division();
 				system("cls");
 				goto B;
 			}
-			if (opt == "multiplication" || opt == "Multiplication") {
+			if (opt == "multiplication" || opt == "2") {
 				system("cls");
 				multiplication multi;
 
@@ -211,34 +256,37 @@ int main() {
 				string optios;
 
 			}
-			if (opt == "Area" || opt == "area") {
+			if (opt == "1" || opt == "area") {
 				string str;
 				system("cls");
-				cout << "Square  Triangle\nCircle  Trapezoid\n";
+				cout << "1. Square  2. Triangle\n3. Circle  4. Trapezoid\n";
 				cin >> str;
-				if (str == "Trapezoid" || str == "trapezoid") {
+				if (str == "4" || str == "trapezoid") {
 					Trapezoid trap;
 					trapezoid(trap);
 					goto B;
 				}
-				if (str == "circle" || str == "Circle") {
+				if (str == "circle" || str == "3") {
 					system("cls");
 					Circle c;
 					circle(c);
 					system("cls");
 					goto B;
 				}
-				if (str == "triangle" || str == "Triangle") {
+				if (str == "triangle" || str == "2") {
 					system("cls");
 					triangle tri;
 					goto B;
 				}
-				else if (str == "square" || str == "Square") {
+				else if (str == "square" || str == "1") {
 					square sq;
 					cout << "Do you want to go back to go to the main menu? Y/N\n";
 					string rt;
 					rt = _getch();
 					system("cls");
+					if (rt == "N" || rt == "n") {
+						goto B;
+					}
 					if (rt == "Y" || rt == "y") {
 						goto B;
 					}
@@ -258,5 +306,9 @@ int main() {
 		goto B;
 
 	}
+	
+	PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	MessageBox(NULL, L"Option is not Valid.\nUse numbers.", L"Error", MB_OK | MB_ICONERROR);
+	goto B;
 
 }

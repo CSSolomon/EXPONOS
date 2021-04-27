@@ -11,7 +11,7 @@ using namespace std;
 
 class music {
 public:
-	void u() {
+	void ut() {
 	A:
 		system("cls");
 		PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -81,13 +81,13 @@ public:
 			}
 		}
 		if (o == 4) {
-			PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("Windows2000Beta3Startup"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
 			cout << "Press R to repeat  Press any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("xpstart.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				PlaySound(TEXT("Windows2000Beta3Startup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 				yo = _getch();
 				system("cls");
 				goto A;
@@ -99,13 +99,13 @@ public:
 			}
 		}
 		if (o == 5) {
-			PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
 			cout << "Press R to repeat  Press any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("Windowslogoff.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 				yo = _getch();
 				system("cls");
 				goto A;
@@ -150,6 +150,7 @@ public:
 		}
 
 		_getch();
+		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
 
 	}
@@ -167,6 +168,7 @@ public:
 		cin >> b;
 		system("cls");
 		cout << a * b << "\n";
+		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 	}
 };
@@ -186,6 +188,7 @@ public:
 		int resulttt = c * d / 2;
 		ofstream file("result of triangle.txt");
 		file << resulttt;
+		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Result saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
 		system("pause");
 		system("cls");
@@ -208,6 +211,7 @@ public:
 		system("pause");
 		ofstream re("result of circle.txt");
 		re << resultt;
+		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 	}
 };
@@ -234,6 +238,7 @@ public:
 		system("pause");
 		ofstream doc("result of trapezoid.txt");
 		doc << res;
+		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 		system("cls");
 
@@ -760,7 +765,7 @@ public:
 		system("cls");
 		if (a == "7" && b == "5" && c == "8") {
 
-
+			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			MessageBox(NULL, L"Have A Nice Day", L"HAND", MB_OK | MB_ICONWARNING);
 			
 
