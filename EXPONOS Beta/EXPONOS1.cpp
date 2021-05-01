@@ -12,7 +12,7 @@ using namespace std;
 
 class Setup {
 public:
-	void et() {
+	void set() {
 		cout << "Welcome to the EXPONOS Setup\n";
 
 		PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
@@ -20,7 +20,7 @@ public:
 		cout << "Press any key to install EXPONOS";
 		_getch();
 		system("cls");
-		for (int i = 0; i < 0; i++) {
+		for (int i = 0; i < 3; i++) {
 
 
 			cout << "Thank you for installing EXPONOS\n";

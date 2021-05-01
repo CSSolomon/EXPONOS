@@ -37,9 +37,7 @@ public:
 				
 
 			}
-			else {
-				goto A;
-			}
+	
 		}
 		if (o == 2) {
 			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -57,9 +55,7 @@ public:
 
 
 			}
-			else {
-				goto A;
-			}
+		
 		}
 		if (o == 3) {
 			PlaySound(TEXT("mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -76,9 +72,7 @@ public:
 
 
 			}
-			else {
-				goto A;
-			}
+
 		}
 		if (o == 4) {
 			PlaySound(TEXT("Windows2000Beta3Startup"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -94,9 +88,7 @@ public:
 
 
 			}
-			else {
-				goto A;
-			}
+			
 		}
 		if (o == 5) {
 			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -112,9 +104,7 @@ public:
 
 
 			}
-			else {
-				goto A;
-			}
+			
 		}
 	}
 };
@@ -777,12 +767,15 @@ public:
 class raregg {
 public:
 	void fu() {
+		
 		system("cls");
 		system("start project1.exe");
+		system("exit");
 	}
 
 	void ou() {
 		system("cls");
 		system("start project2.exe");
+		system("cls");
 	}
 };
