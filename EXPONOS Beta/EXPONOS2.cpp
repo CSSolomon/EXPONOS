@@ -8,6 +8,19 @@
 
 using namespace std;
 
+class EXPONOS {
+public:
+	void functi() {
+		system("cls");
+		PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		ofstream exp("EXPONOS.txt");
+		system("cd");
+		exp << "EXPONOS is an acronym for Expereience Of a New OS Setup, it was firstly made as a game (experiencing a setup of a new os) first ever build was on March 2021.\nEXPONOS now is starting to become more useful and more of a tool, and it will continue to do so.\nThank you for trying EXPONOS";
+		Sleep(10000);
+		PlaySound(TEXT("Windows XP Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		system("cls");
+	}
+};
 
 class music {
 public:
@@ -25,7 +38,7 @@ public:
 		if (o == 1) {
 			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
-			cout << "Press R to repeat  Press any other key to quit";
+			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
@@ -37,12 +50,16 @@ public:
 				
 
 			}
+			else {
+				goto A;
+			}
 	
 		}
+		
 		if (o == 2) {
 			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
-			cout << "Press R to repeat  Press any other key to quit";
+			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
@@ -55,12 +72,21 @@ public:
 
 
 			}
+			else {
+				goto A;
+			}
 		
 		}
+		else {
+			PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			MessageBox(NULL, L"Option is not Valid.\nUse numbers.", L"Error", MB_OK | MB_ICONERROR);
+			goto A;
+		}
+	
 		if (o == 3) {
 			PlaySound(TEXT("mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
-			cout << "Press R to repeat  Press any other key to quit";
+			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
@@ -72,12 +98,17 @@ public:
 
 
 			}
+			else {
+				goto A;
+			}
 
 		}
+		
+		
 		if (o == 4) {
 			PlaySound(TEXT("Windows2000Beta3Startup"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
-			cout << "Press R to repeat  Press any other key to quit";
+			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
@@ -88,12 +119,17 @@ public:
 
 
 			}
+			else {
+				goto A;
+			}
 			
 		}
+		
+		
 		if (o == 5) {
 			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		
-			cout << "Press R to repeat  Press any other key to quit";
+			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
@@ -104,8 +140,13 @@ public:
 
 
 			}
+			else {
+				goto A;
+			}
 			
 		}
+		
+		
 	}
 };
 
@@ -121,9 +162,6 @@ public:
 		for (int i = 0; i < 100; i++)
 		{
 			cin >> array[i];
-			if (array[i] == " ") {
-				array[i] = " ";
-			}
 			if (array[i] == "^") {
 				break;
 			}
@@ -766,14 +804,19 @@ public:
 
 class raregg {
 public:
-	void fu() {
-		
+	 virtual void fu() {
+	
 		system("cls");
 		system("start project1.exe");
 		system("exit");
 	}
 
-	void ou() {
+	 
+};
+
+class raregg2 : public raregg {
+public:
+	 void fu() {
 		system("cls");
 		system("start project2.exe");
 		system("cls");
