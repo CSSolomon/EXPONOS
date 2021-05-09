@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <conio.h>
 #include <Windows.h>
@@ -12,55 +12,103 @@ using namespace std;
 
 class Setup {
 public:
-	void se() {
-		cout << "Welcome to the EXPONOS Setup\n";
-
-		PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-
-		cout << "Press any key to install EXPONOS";
-		_getch();
+	void setupfil() {
 		system("cls");
-		for (int i = 0; i < 3; i++) {
-
-
-			cout << "Thank you for installing EXPONOS\n";
-			cout << "Installing . \n";
-			Sleep(2000);
+		for (int i = 0; i < 6; i++)
+		{
+			cout << "Scanning . " << endl;
+			Sleep(950);
 			system("cls");
-			cout << "HINT: Easter Eggs are included\n";
-			cout << "Installing . . \n";
-			Sleep(2000);
+			cout << "Scanning . ." << endl;
+			Sleep(950);
 			system("cls");
-			cout << "Texter is included, a powerful text editor, designed for your needs!\n";
-			cout << "Installing . . . \n";
-			Sleep(2000);
+			cout << "Scanning . . ." << endl;
+			Sleep(1000);
 			system("cls");
-			cout << "Do arithmatic faster with the new calculator\n";
-			cout << "Installing . \n";
-			Sleep(2000);
+		}
+		fstream setupfile("setup.cpp");
+		if (setupfile) {
 			system("cls");
-			cout << "To quit from the texter, type ^ \n";
-			cout << "Installing . . \n";
-			Sleep(2000);
+			PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			cout << "File found!";
+			Sleep(3000);
 			system("cls");
-			cout << "EXPONOS stands for Experience Of a New OS Setup\n";
-			cout << "Installing . . . \n";
-			Sleep(2000);
-			system("cls");
-			cout << "To give feedback or report a bug type 'report'\n";
-			cout << "Installing . \n";
-			Sleep(2000);
-			system("cls");
-			cout << "To end a line in texter type endl\n";
-			cout << "Installing . . \n";
-			Sleep(2000);
-			system("cls");
-			cout << "EXPONOS was first released (Alpha Version) in March 2021\n";
-			cout << "Installing . . . \n";
-			Sleep(2000);
+			
+		}
+		else {
 			system("cls");
 
+			PlaySound(TEXT("Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
+			cout << "File Not Found!";
+			Sleep(3000);
+			system("cls");
+			se();
+		}
+	}
+	
+	void se() {
+		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		system("color 17");
+		cout << " EXPONOS Setup 1.0 Release\n";
+		cout << "============================\n\n\n";
+		
+
+		
+		cout << "                                   * Press S to scan for an existing setup file\n";
+		cout << "                                   * Press any other key to install EXPONOS\n";
+		
+		string set;
+		set = _getch();
+		system("cls");
+		if (set == "S" || set == "s") {
+
+			setupfil();
+		}
+		else {
+			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+
+			for (int i = 0; i < 3; i++) {
+
+				cout << "Thank you for installing EXPONOS\n";
+				cout << "Installing . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "HINT: Easter Eggs are included\n";
+				cout << "Installing . . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "Texter is included, a powerful text editor, designed for your needs!\n";
+				cout << "Installing . . . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "Do arithmatic faster with the new calculator\n";
+				cout << "Installing . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "To quit from the texter, type ^ \n";
+				cout << "Installing . . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "EXPONOS stands for Experience Of a New OS Setup\n";
+				cout << "Installing . . . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "To give feedback or report a bug type 'report'\n";
+				cout << "Installing . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "To end a line in texter type endl\n";
+				cout << "Installing . . \n";
+				Sleep(2000);
+				system("cls");
+				cout << "EXPONOS was first released (Alpha Version) in March 2021\n";
+				cout << "Installing . . . \n";
+				Sleep(2000);
+				system("cls");
+			}
+
+			system("color 00");
 		}
 	}
 };
@@ -79,7 +127,7 @@ public:
 
 		cin >> opt;
 		system("cls");
-		
+
 		if (opt == 1) {
 			ofstream documentt("document1.txt");
 			string ab;
@@ -111,12 +159,12 @@ public:
 			if (document.is_open()) {
 				cout << document.rdbuf();
 			}
-			
+
 			string ab;
 			for (int i = 0; i < 999999999; i++)
 			{
-				
-				
+
+
 				getline(cin, ab);
 				if (ab == "^") {
 					break;
@@ -124,7 +172,7 @@ public:
 				if (ab == "endl") {
 					document << endl;
 					continue;
-					
+
 				}
 				document << ab;
 			}
@@ -136,13 +184,13 @@ public:
 				system("cls");
 			}
 		}
-		
 
-				
-				
-			
 
-		
+
+
+
+
+
 
 	}
 
@@ -157,11 +205,11 @@ public:
 		int i = 0;
 		while (i != 10) {
 			system("cls");
-			
+
 			cout << date_time;
 			Sleep(2000);
 			i++;
-			
+
 		}
 	}
 };

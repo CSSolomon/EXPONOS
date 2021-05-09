@@ -8,7 +8,7 @@
 #include <ctime>
 #include <time.h>
 #include <chrono>
-#pragma warning(disable : 4996)
+
 
 
 
@@ -28,7 +28,7 @@ void ptrfunc(raregg *ptr) {
 
 int main() {
 
-
+	system("color 07");
 	string username;
 	string yn;
 	string setup;
@@ -74,7 +74,7 @@ int main() {
 			goto Q;
 		}
 
-		cout << "Set Username\n";
+		cout << "First Name\n";
 		cin >> username;
 		PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
 		system("cls");
@@ -82,7 +82,7 @@ int main() {
 
 	}
 	else if (yn == "N" || yn == "n") {
-		cout << "Set Username\n";
+		cout << "First Name\n";
 		cin >> username;
 
 		system("cls");
@@ -93,7 +93,7 @@ int main() {
 
 
 	PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-	cout << "Welcome " << username << "\n";
+	cout << "Welcome " << username << endl;
 	cout << "Setup\n";
 	cin >> setup;
 	system("cls");
@@ -107,7 +107,10 @@ int main() {
 	}
 
 	system("cls");
+	system("color 07");
 	cout << "Setup Complete\n";
+	system("color 07");
+	ofstream setupdone("setup.cpp");
 	PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
 	Sleep(1000);
 	cout << "A restart is required in order for the setup to apply the changes . . .\n";
@@ -124,7 +127,7 @@ int main() {
 
 
 
-
+	system("color 07");
 
 
 
@@ -178,6 +181,7 @@ C:
 
 	PlaySound(TEXT("Windows2000Beta3Startup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 B:
+	
 	system("cls");
 	cout << "Welcome \n" << username;															//<-- Main Menu
 	cout << "\n\n1. Internet\n2. Calculator\n3. Credits\n4. Media\n5. Texter\n6. Sorter\n7. Report a bug or give feedback\n8. Color\n9. Shutdown\n";
@@ -194,7 +198,7 @@ B:
 	if (oobe == "03") { EXPONOS expo; expo.functi(); system("cls"); goto C; }
 	if (oobe == "8") {
 		system("cls");
-		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black";
+		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
 		int co;
 		cin >> co;
 		switch (co) {
@@ -225,8 +229,8 @@ B:
 		case 9:
 			system("color 9");
 			break;
-		
-			
+
+
 
 		}
 		system("cls");
@@ -242,73 +246,23 @@ B:
 		cout << "Restart in 1 . . .\n";
 		Sleep(1000);
 
-
-
-
-
-
-
-		system("cls");
-		PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		for (int i = 0; i < 2; i++)
-		{
-			cout << "Restarting . ";
-			Sleep(950);
-			system("cls");
-			cout << "Restarting . .";
-			Sleep(950);
-			system("cls");
-			cout << "Restarting . . .";
-			Sleep(1000);
-			system("cls");
-
-		}
-
-		system("cls");
-		for (int i = 0; i < 2; i++)
-		{
-			cout << "Starting .";
-			Sleep(950);
-			system("cls");
-			cout << "Starting . . ";
-			Sleep(950);
-			system("cls");
-			cout << "Starting . . .";
-			Sleep(1000);
-			system("cls");
-		}
-
-
-
-		if (yn == "y" || yn == "Y") {
-			cout << "Enter password ";
-			cin >> check;
-			system("cls");
-
-			if (pass != check) {
-				do {
-					cout << "Incorrect!\n";
-					PlaySound(TEXT("chord.wav"), NULL, SND_SYNC);
-					cout << "Enter password\n";
-					cin >> passs;
-					system("cls");
-				} while (pass != passs);
-			}
-		}
-
 		goto C;
-		
+
+
+
+
+
 	}
 	if (oobe == "alpha1") {
 		system("cls");
-		
+
 		ptr2func(ptr2);
 		system("cls");													//<-- alpha1 Easter egg
 		goto B;
 	}
 	if (oobe == "alpha2") {
 		system("cls");
-		
+
 		ptrfunc(ptr);
 		system("cls");													//<-- alpha2 Easter egg
 		goto B;
@@ -429,22 +383,14 @@ B:
 			}
 			else if (str == "square" || str == "1") {
 				square sq;
-				cout << "Do you want to go back to go to the main menu? Y/N\n";
-				string rt;
-				rt = _getch();
 				system("cls");
-				if (rt == "N" || rt == "n") {
-					goto B;
-				}
-				if (rt == "Y" || rt == "y") {
-					goto B;
-				}
+				goto B;
 			}
 
 		}
 	}
 
-	
+
 	string menu;
 	if (oobe == "internet" || oobe == "1") {
 		system("cls");
@@ -456,7 +402,7 @@ B:
 		goto B;
 
 	}
-	
+
 	PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	MessageBox(NULL, L"Option is not Valid.\nUse numbers.", L"Error", MB_OK | MB_ICONERROR);
 	goto B;

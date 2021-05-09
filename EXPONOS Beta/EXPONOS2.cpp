@@ -37,7 +37,7 @@ public:
 		}
 		if (o == 1) {
 			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		
+
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -47,18 +47,18 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-				
+
 
 			}
 			else {
 				goto A;
 			}
-	
+
 		}
-		
+
 		if (o == 2) {
 			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		
+
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -67,25 +67,21 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-				
-				
+
+
 
 
 			}
 			else {
 				goto A;
 			}
-		
+
 		}
-		else {
-			PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			MessageBox(NULL, L"Option is not Valid.\nUse numbers.", L"Error", MB_OK | MB_ICONERROR);
-			goto A;
-		}
-	
+
+
 		if (o == 3) {
 			PlaySound(TEXT("mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		
+
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -94,7 +90,7 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-				
+
 
 
 			}
@@ -103,11 +99,11 @@ public:
 			}
 
 		}
-		
-		
+
+
 		if (o == 4) {
 			PlaySound(TEXT("Windows2000Beta3Startup"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		
+
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -122,13 +118,13 @@ public:
 			else {
 				goto A;
 			}
-			
+
 		}
-		
-		
+
+
 		if (o == 5) {
 			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		
+
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -143,10 +139,10 @@ public:
 			else {
 				goto A;
 			}
-			
+
 		}
-		
-		
+
+
 	}
 };
 
@@ -189,10 +185,10 @@ public:
 	square() {
 		system("cls");
 		int a, b;
-		cout << "Enter Width: \n";
-		cin >> a; 
+		cout << "Enter Width: ";
+		cin >> a;
 		system("cls");
-		cout << "Enter Length: \n";
+		cout << "Enter Length: ";
 		cin >> b;
 		system("cls");
 		cout << a * b << "\n";
@@ -229,9 +225,9 @@ private:
 	double pi = 3.14;
 public:
 	friend void circle(Circle c) {
-		
+
 		system("cls");
-		cout << "Radius";
+		cout << "Radius ";
 		cin >> c.radius;
 		system("cls");
 		cout << c.pi * c.radius * c.radius << "\n";
@@ -252,7 +248,7 @@ public:
 
 	friend void trapezoid(Trapezoid trap) {
 		system("cls");
-		cout << "Base";
+		cout << "Base ";
 		cin >> trap.a;
 		system("cls");
 		cout << "Second base ";
@@ -352,7 +348,7 @@ public:
 			break;
 		case 6:
 
-			
+
 			cout << "Enter first number: ";
 			cin >> n;
 			system("cls");
@@ -460,7 +456,7 @@ public:
 			system("cls");
 			cout << "Enter ninth number: ";
 			cin >> z;
-			
+
 			system("cls");
 			cout << n * u * m * l * v * h * y * j * z << "\n";
 			system("pause");
@@ -508,7 +504,7 @@ public:
 
 class Division {
 public:
-	
+
 		void division() {
 			int a, b;
 			cout << "How many numbers would you like to divide (min 2 - max 10) \n";
@@ -766,16 +762,16 @@ private:
 class yfm : public egg {
 public:
 	yfm() {
-		
+
 		system("cls");
 		ofstream me("about me.txt");
 		me << "About me:\nMy name is Angelo Petrai, the developer of this app. I was born on May 7th 2008. I've been a tech enthusiast since I was 3 years old. I've been learning C++ for about 5 months and I'm still continuing to do so. If you found this easter egg then congratulations. I really appreciate you User, for taking your time to try out my app. I hope that you enjoyed my app :)";
 		me.close();
 		system("cd");
-		
+
 		Sleep(10000);
 		system("cls");
-		
+
 	}
 };
 
@@ -795,7 +791,7 @@ public:
 
 			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			MessageBox(NULL, L"Have A Nice Day", L"HAND", MB_OK | MB_ICONWARNING);
-			
+
 
 		}
 	}
@@ -805,13 +801,13 @@ public:
 class raregg {
 public:
 	 virtual void fu() {
-	
+
 		system("cls");
 		system("start project1.exe");
 		system("exit");
 	}
 
-	 
+
 };
 
 class raregg2 : public raregg {
@@ -820,5 +816,13 @@ public:
 		system("cls");
 		system("start project2.exe");
 		system("cls");
+	}
+};
+
+
+class EXPONOSs {
+public:
+	virtual void func() {
+
 	}
 };
