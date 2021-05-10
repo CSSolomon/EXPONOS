@@ -100,7 +100,7 @@ int main() {
 	if (setup == "setup" || setup == "Setup") {
 
 		Setup se;								// <-- Setup
-		se.se();
+		se.s();
 	}
 	else {
 		return 0;
@@ -129,7 +129,7 @@ int main() {
 
 	system("color 07");
 
-
+	W:
 
 	system("cls");
 	PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -184,7 +184,7 @@ B:
 	
 	system("cls");
 	cout << "Welcome \n" << username;															//<-- Main Menu
-	cout << "\n\n1. Internet\n2. Calculator\n3. Credits\n4. Media\n5. Texter\n6. Sorter\n7. Report a bug or give feedback\n8. Color\n9. Shutdown\n";
+	cout << "\n\n1. Internet\n2. Calculator\n3. Credits\n4. Media\n5. Texter\n6. Sorter\n7. Report a bug or give feedback\n8. Current Directory Command Prompt\n9. Color\n0. Shutdown\n";
 	raregg* ptr;
 	raregg* ptr2;
 	raregg2 alpha2;
@@ -195,8 +195,9 @@ B:
 
 
 	cin >> oobe;
+	if (oobe == "8") { system("start cmd.exe"); goto B; }
 	if (oobe == "03") { EXPONOS expo; expo.functi(); system("cls"); goto C; }
-	if (oobe == "8") {
+	if (oobe == "9") {
 		system("cls");
 		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
 		int co;
@@ -245,8 +246,10 @@ B:
 		system("cls");
 		cout << "Restart in 1 . . .\n";
 		Sleep(1000);
+		system("cls");
 
-		goto C;
+
+		goto W;
 
 
 
@@ -274,7 +277,7 @@ B:
 		goto B;
 
 	}
-	if (oobe == "9" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
+	if (oobe == "0" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
 		PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		system("cls");
 		cout << "Shutting Down .";
@@ -294,7 +297,7 @@ B:
 	if (oobe == "sorter" || oobe == "6") {
 		system("cls");
 		sorter so;									// <-- Sorter
-		so.functio();
+		so.funct();
 		system("cls");
 		goto B;
 	}

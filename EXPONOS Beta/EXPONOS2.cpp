@@ -151,32 +151,39 @@ class sorter {
 public:
 	string array[100];
 
-	void functio() {
-		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl;
-		system("pause");
-		system("cls");
-		for (int i = 0; i < 100; i++)
-		{
-			cin >> array[i];
-			if (array[i] == "^") {
-				break;
+	void funct() {
+		fstream srt("sorted.txt");
+		string option;
+		cout << "1. Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl;
+		if (srt) {
+			cout << "2. sorted.txt" << endl;
+		}
+		option = _getch();
+		if (option == "1" || option == "2") {
+			system("cls");
+			for (int i = 0; i < 100; i++)
+			{
+				cin >> array[i];
+				if (array[i] == "^") {
+					array[i] = " ";
+					break;
+				}
 			}
+
+			sort(begin(array), end(array));
+
+			ofstream sorted("sorted.txt");
+			system("cls");
+			for (string i : array)
+			{
+				cout << i;
+				sorted << i;
+			}
+
+			_getch();
+			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
 		}
-
-		sort(begin(array), end(array));
-
-		ofstream sorted("sorted.txt");
-		system("cls");
-		for (string i : array)
-		{
-			cout << i ;
-			sorted << i;
-		}
-
-		_getch();
-		PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
-
 	}
 };
 

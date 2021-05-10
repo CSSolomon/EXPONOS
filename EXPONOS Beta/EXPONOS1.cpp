@@ -43,20 +43,20 @@ public:
 			cout << "File Not Found!";
 			Sleep(3000);
 			system("cls");
-			se();
+			s();
 		}
 	}
 	
-	void se() {
-		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	void s() {
+		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 		system("color 17");
-		cout << " EXPONOS Setup 1.0 Release\n";
-		cout << "============================\n\n\n";
+		cout << " EXPONOS Setup 1.1 Release\n";
+		cout << "____________________________\n\n\n\n";
 		
 
 		
-		cout << "                                   * Press S to scan for an existing setup file\n";
-		cout << "                                   * Press any other key to install EXPONOS\n";
+		cout << "                                           * Press S to scan for an existing saved setup file\n";
+		cout << "                                           * Press any other key to install EXPONOS\n";
 		
 		string set;
 		set = _getch();
