@@ -102,13 +102,13 @@ public:
 
 
 		if (o == 4) {
-			PlaySound(TEXT("Windows2000Beta3Startup"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("Windows2000Beta3Startup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				PlaySound(TEXT("Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 				yo = _getch();
 				system("cls");
 				goto A;
@@ -123,13 +123,13 @@ public:
 
 
 		if (o == 5) {
-			PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				PlaySound(TEXT("Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 				yo = _getch();
 				system("cls");
 				goto A;
@@ -151,19 +151,25 @@ class sorter {
 public:
 	string array[100];
 
-	void funct() {
+	void function() {
 		fstream srt("sorted.txt");
 		string option;
-		cout << "1. Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl;
+		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl << "To quit from sorter type ^ " << endl << endl << "1. Create a New Document" << endl;
 		if (srt) {
 			cout << "2. sorted.txt" << endl;
 		}
 		option = _getch();
+		if (option == "^") {
+			system("cls");
+		}
 		if (option == "1" || option == "2") {
 			system("cls");
 			for (int i = 0; i < 100; i++)
 			{
 				cin >> array[i];
+				if (array[i] == " ") {
+					array[i] == " ";
+				}
 				if (array[i] == "^") {
 					array[i] = " ";
 					break;
@@ -176,10 +182,11 @@ public:
 			system("cls");
 			for (string i : array)
 			{
-				cout << i;
-				sorted << i;
+				cout << i << " ";
+				sorted << i << " ";
 			}
-
+			cout << endl;
+			cout << "Press any key to save the document and go back to the main menu . . ." << endl;
 			_getch();
 			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);

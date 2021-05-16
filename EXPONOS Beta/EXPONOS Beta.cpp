@@ -14,8 +14,78 @@
 
 
 using namespace std;
+void notes() {
+	system("cls");
+	string opt;
+	ifstream test("Notes.txt");
+	cout << "Welcome to Notes designed for your needs\nType endl to end a line and type ^ if you want to quit.\n\n1. Create new note\n";
+
+	if (test) {
+		cout << "2. Notes.txt";
+	}
+
+	cin >> opt;
+	system("cls");
+	if (opt == "^") {
+
+	}
+	if (opt == "1") {
+		ofstream documentt("Notes.txt");
+		string ab;
+		for (int i = 0; i < 999999999; i++)
+		{
 
 
+			getline(cin, ab);
+			if (ab == "^") {
+				break;
+			}
+			if (ab == "endl") {
+				documentt << endl;
+				continue;
+
+			}
+			documentt << ab;
+		}
+		if (documentt) {
+			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+			system("pause");
+			system("cls");
+		}
+	}
+	if (opt == "2") {
+		fstream document("Notes.txt");
+		if (document.is_open()) {
+			cout << document.rdbuf();
+		}
+
+		string ab;
+		for (int i = 0; i < 999999999; i++)
+		{
+
+
+			getline(cin, ab);
+			if (ab == "^") {
+				break;
+			}
+			if (ab == "endl") {
+				document << endl;
+				continue;
+
+			}
+			document << ab;
+		}
+		if (document) {
+			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+			system("pause");
+			system("cls");
+		}
+	}
+}
 void ptr2func(raregg* ptr2) {
 	ptr2->fu();
 }
@@ -34,6 +104,7 @@ int main() {
 	string setup;
 	string rest;
 	string oobe;
+	string username2;
 
 	string check;
 	string pass;
@@ -78,6 +149,10 @@ int main() {
 		cin >> username;
 		PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
 		system("cls");
+		cout << "Last Name\n";
+		cin >> username2;
+
+		system("cls");
 
 
 	}
@@ -86,25 +161,19 @@ int main() {
 		cin >> username;
 
 		system("cls");
+		cout << "Last Name\n";
+		cin >> username2;
+
+		system("cls");
 	}
 	else {
 		return 0;
 	}
 
-
-	PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-	cout << "Welcome " << username << endl;
-	cout << "Setup\n";
-	cin >> setup;
-	system("cls");
-	if (setup == "setup" || setup == "Setup") {
 
 		Setup se;								// <-- Setup
 		se.s();
-	}
-	else {
-		return 0;
-	}
+	
 
 	system("cls");
 	system("color 07");
@@ -132,7 +201,7 @@ int main() {
 	W:
 
 	system("cls");
-	PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	for (int i = 0; i < 2; i++)
 	{
 		cout << "Restarting . ";
@@ -179,12 +248,12 @@ C:
 		}
 	}
 
-	PlaySound(TEXT("Windows2000Beta3Startup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 B:
 	
 	system("cls");
-	cout << "Welcome \n" << username;															//<-- Main Menu
-	cout << "\n\n1. Internet\n2. Calculator\n3. Credits\n4. Media\n5. Texter\n6. Sorter\n7. Report a bug or give feedback\n8. Current Directory Command Prompt\n9. Color\n0. Shutdown\n";
+	cout << "Welcome " << username << " " << username2;															//<-- Main Menu
+	cout << "\n\n0.  Shutdown\n1.  Browser\n2.  Calculator\n3.  Credits\n4.  Media\n5.  Texter\n6.  Sorter\n7.  Report a bug or give feedback\n8.  Current Directory Command Prompt\n9.  Color\n10. Notes\n";
 	raregg* ptr;
 	raregg* ptr2;
 	raregg2 alpha2;
@@ -195,45 +264,414 @@ B:
 
 
 	cin >> oobe;
+	if (oobe == "10") { system("cls"); notes(); goto B; }
 	if (oobe == "8") { system("start cmd.exe"); goto B; }
 	if (oobe == "03") { EXPONOS expo; expo.functi(); system("cls"); goto C; }
 	if (oobe == "9") {
 		system("cls");
-		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n0. Reset\n";
 		int co;
 		cin >> co;
+		system("cls");
+		string l;
 		switch (co) {
 		case 1:
 			system("color 4");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 44");
+					break;
+				case 2:
+					system("color 24");
+					break;
+				case 3:
+					system("color 14");
+					break;
+				case 4:
+					system("color 54");
+					break;
+				case 5:
+					system("color 64");
+					break;
+				case 6:
+					system("color 34");
+					break;
+				case 7:
+					system("color 74");
+					break;
+				case 8:
+					system("color 84");
+					break;
+				case 9:
+					system("color 94");
+					break;
+
+
+
+				}
+				
+			}
+			
 			break;
 		case 2:
 			system("color a");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 4a");
+					break;
+				case 2:
+					system("color 2a");
+					break;
+				case 3:
+					system("color 1a");
+					break;
+				case 4:
+					system("color 5a");
+					break;
+				case 5:
+					system("color 6a");
+					break;
+				case 6:
+					system("color 3a");
+					break;
+				case 7:
+					system("color 7a");
+					break;
+				case 8:
+					system("color 8a");
+					break;
+				case 9:
+					system("color 9a");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 3:
 			system("color 1");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 41");
+					break;
+				case 2:
+					system("color 21");
+					break;
+				case 3:
+					system("color 11");
+					break;
+				case 4:
+					system("color 51");
+					break;
+				case 5:
+					system("color 61");
+					break;
+				case 6:
+					system("color 31");
+					break;
+				case 7:
+					system("color 71");
+					break;
+				case 8:
+					system("color 81");
+					break;
+				case 9:
+					system("color 91");
+					break;
+
+
+
+				}
+
+			}
+			
 			break;
 		case 4:
 			system("color 5");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 45");
+					break;
+				case 2:
+					system("color 25");
+					break;
+				case 3:
+					system("color 15");
+					break;
+				case 4:
+					system("color 55");
+					break;
+				case 5:
+					system("color 65");
+					break;
+				case 6:
+					system("color 35");
+					break;
+				case 7:
+					system("color 75");
+					break;
+				case 8:
+					system("color 85");
+					break;
+				case 9:
+					system("color 95");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 5:
 			system("color 6");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 46");
+					break;
+				case 2:
+					system("color 26");
+					break;
+				case 3:
+					system("color 16");
+					break;
+				case 4:
+					system("color 56");
+					break;
+				case 5:
+					system("color 66");
+					break;
+				case 6:
+					system("color 36");
+					break;
+				case 7:
+					system("color 76");
+					break;
+				case 8:
+					system("color 86");
+					break;
+				case 9:
+					system("color 96");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 6:
 			system("color 3");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 43");
+					break;
+				case 2:
+					system("color 23");
+					break;
+				case 3:
+					system("color 13");
+					break;
+				case 4:
+					system("color 53");
+					break;
+				case 5:
+					system("color 63");
+					break;
+				case 6:
+					system("color 33");
+					break;
+				case 7:
+					system("color 73");
+					break;
+				case 8:
+					system("color 83");
+					break;
+				case 9:
+					system("color 93");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 7:
 			system("color 7");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 47");
+					break;
+				case 2:
+					system("color 27");
+					break;
+				case 3:
+					system("color 17");
+					break;
+				case 4:
+					system("color 57");
+					break;
+				case 5:
+					system("color 67");
+					break;
+				case 6:
+					system("color 37");
+					break;
+				case 7:
+					system("color 77");
+					break;
+				case 8:
+					system("color 87");
+					break;
+				case 9:
+					system("color 97");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 8:
 			system("color 8");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 48");
+					break;
+				case 2:
+					system("color 28");
+					break;
+				case 3:
+					system("color 18");
+					break;
+				case 4:
+					system("color 58");
+					break;
+				case 5:
+					system("color 68");
+					break;
+				case 6:
+					system("color 38");
+					break;
+				case 7:
+					system("color 78");
+					break;
+				case 8:
+					system("color 88");
+					break;
+				case 9:
+					system("color 98");
+					break;
+
+
+
+				}
+
+			}
 			break;
 		case 9:
 			system("color 9");
+			cout << "Change Background color? Y/N";
+			l = _getch();
+			system("cls");
+			if (l == "y" || l == "Y") {
+				cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n";
+				cin >> co;
+				switch (co) {
+				case 1:
+					system("color 40");
+					break;
+				case 2:
+					system("color 20");
+					break;
+				case 3:
+					system("color 10");
+					break;
+				case 4:
+					system("color 50");
+					break;
+				case 5:
+					system("color 60");
+					break;
+				case 6:
+					system("color 30");
+					break;
+				case 7:
+					system("color 70");
+					break;
+				case 8:
+					system("color 80");
+					break;
+				case 9:
+					system("color 90");
+					break;
+
+
+
+				}
+
+			}
 			break;
+
+		case 0:
+			system("color 07");
 
 
 
 		}
+
 		system("cls");
 		cout << "A restart is required in order to apply the changes . . .\n";
 		Sleep(4000);
@@ -278,7 +716,7 @@ B:
 
 	}
 	if (oobe == "0" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
-		PlaySound(TEXT("Windows2000Beta3Shutdown.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		system("cls");
 		cout << "Shutting Down .";
 		Sleep(950);
@@ -297,7 +735,7 @@ B:
 	if (oobe == "sorter" || oobe == "6") {
 		system("cls");
 		sorter so;									// <-- Sorter
-		so.funct();
+		so.function();
 		system("cls");
 		goto B;
 	}
@@ -397,17 +835,49 @@ B:
 	string menu;
 	if (oobe == "internet" || oobe == "1") {
 		system("cls");
-		system("start https://google.com");
-		cout << "Press any key to go back to the main menu\n";
+		cout << "Choose from the following search engines: \n 1. Google.com \n 2. Bing.com \n 3. DuckDuckGo.com \n 4. Yahoo.com \n";
+		menu = _getch();
+		if (menu == "1") {
+			system("cls");
+			system("start https://google.com");
+			cout << "Press any key to go back to the main menu\n";
 
-		_getch();												// <-- Internet
-		system("cls");
-		goto B;
+			_getch();																														// <-- Internet
+			system("cls");
+			goto B;
+		}
+		if (menu == "2") {
+			system("cls");
+			system("start https://Bing.com");
+			cout << "Press any key to go back to the main menu\n";
+
+			_getch();												
+			system("cls");
+			goto B;
+		}
+		if (menu == "3") {
+			system("cls");
+			system("start https://DuckDuckGo.com");
+			cout << "Press any key to go back to the main menu\n";
+
+			_getch();											
+			system("cls");
+			goto B;
+		}
+		if (menu == "4") {
+			system("cls");
+			system("start https://Yahoo.com");
+			cout << "Press any key to go back to the main menu\n";
+
+			_getch();											
+			system("cls");
+			goto B;
+		}
 
 	}
 
 	PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-	MessageBox(NULL, L"Option is not Valid.\nUse numbers.", L"Error", MB_OK | MB_ICONERROR);
+	MessageBox(NULL, L"Option is not Valid.\nUse integer value.\nIf the problem still persists relauch EXPONOS.", L"Error", MB_OK | MB_ICONERROR);
 	goto B;
 
 }

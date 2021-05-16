@@ -39,7 +39,7 @@ public:
 			system("cls");
 
 			PlaySound(TEXT("Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
+			MessageBox(NULL, L"File Not Found\nPlease go through the installation setup.", L"Error", MB_OK | MB_ICONERROR);
 			cout << "File Not Found!";
 			Sleep(3000);
 			system("cls");
@@ -51,10 +51,10 @@ public:
 		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 		system("color 17");
 		cout << " EXPONOS Setup 1.1 Release\n";
-		cout << "____________________________\n\n\n\n";
+		cout << "____________________________\n\n\n";
 		
 
-		
+		cout << "                          Welcome to Setup\n\n";
 		cout << "                                           * Press S to scan for an existing saved setup file\n";
 		cout << "                                           * Press any other key to install EXPONOS\n";
 		
@@ -66,7 +66,7 @@ public:
 			setupfil();
 		}
 		else {
-			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			for (int i = 0; i < 3; i++) {
 
@@ -79,7 +79,7 @@ public:
 				Sleep(2000);
 				system("cls");
 				cout << "Texter is included, a powerful text editor, designed for your needs!\n";
-				cout << "Installing . . . \n";
+				cout << "Installing . . .\n";
 				Sleep(2000);
 				system("cls");
 				cout << "Do arithmatic faster with the new calculator\n";
@@ -87,11 +87,11 @@ public:
 				Sleep(2000);
 				system("cls");
 				cout << "To quit from the texter, type ^ \n";
-				cout << "Installing . . \n";
+				cout << "Installing . .\n";
 				Sleep(2000);
 				system("cls");
 				cout << "EXPONOS stands for Experience Of a New OS Setup\n";
-				cout << "Installing . . . \n";
+				cout << "Installing . . .\n";
 				Sleep(2000);
 				system("cls");
 				cout << "To give feedback or report a bug type 'report'\n";
@@ -102,9 +102,9 @@ public:
 				cout << "Installing . . \n";
 				Sleep(2000);
 				system("cls");
-				cout << "EXPONOS was first released (Alpha Version) in March 2021\n";
+				cout << "To quit from sorter type ^\n";
 				cout << "Installing . . . \n";
-				Sleep(2000);
+				Sleep(3000);
 				system("cls");
 			}
 
