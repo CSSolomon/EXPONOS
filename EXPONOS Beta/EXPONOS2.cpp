@@ -151,7 +151,7 @@ class sorter {
 public:
 	string array[100];
 
-	void function() {
+	void functio() {
 		fstream srt("sorted.txt");
 		string option;
 		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl << "To quit from sorter type ^ " << endl << endl << "1. Create a New Document" << endl;
@@ -167,9 +167,6 @@ public:
 			for (int i = 0; i < 100; i++)
 			{
 				cin >> array[i];
-				if (array[i] == " ") {
-					array[i] == " ";
-				}
 				if (array[i] == "^") {
 					array[i] = " ";
 					break;
@@ -236,7 +233,7 @@ public:
 class Circle {
 private:
 	double radius;
-	double pi = 3.14;
+	double pi = 3.141592653589;
 public:
 	friend void circle(Circle c) {
 

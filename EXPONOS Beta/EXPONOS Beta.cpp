@@ -204,13 +204,13 @@ int main() {
 	PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	for (int i = 0; i < 2; i++)
 	{
-		cout << "Restarting . ";
+		cout << "Restarting . " << endl;
 		Sleep(950);
 		system("cls");
-		cout << "Restarting . .";
+		cout << "Restarting . ." << endl;
 		Sleep(950);
 		system("cls");
-		cout << "Restarting . . .";
+		cout << "Restarting . . ." << endl;
 		Sleep(1000);
 		system("cls");
 
@@ -219,13 +219,13 @@ int main() {
 	system("cls");
 	for (int i = 0; i < 2; i++)
 	{
-		cout << "Starting .";
+		cout << "Starting ." << endl;
 		Sleep(950);
 		system("cls");
-		cout << "Starting . . ";
+		cout << "Starting . . " << endl;
 		Sleep(950);
 		system("cls");
-		cout << "Starting . . .";
+		cout << "Starting . . ." << endl;
 		Sleep(1000);
 		system("cls");
 	}
@@ -735,7 +735,7 @@ B:
 	if (oobe == "sorter" || oobe == "6") {
 		system("cls");
 		sorter so;									// <-- Sorter
-		so.function();
+		so.functio();
 		system("cls");
 		goto B;
 	}
@@ -803,7 +803,7 @@ B:
 		if (opt == "1" || opt == "area") {
 			string str;
 			system("cls");
-			cout << "1. Square  2. Triangle\n3. Circle  4. Trapezoid\n";
+			cout << "1. Square  2. Triangle\n3. Circle  4. Trapezium\n";
 			cin >> str;
 			if (str == "4" || str == "trapezoid") {
 				Trapezoid trap;
@@ -877,7 +877,7 @@ B:
 	}
 
 	PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-	MessageBox(NULL, L"Option is not Valid.\nUse integer value.\nIf the problem still persists relauch EXPONOS.", L"Error", MB_OK | MB_ICONERROR);
+	MessageBox(NULL, L"Option is not Valid.\nUse integer value.\nIf the problem still persists relaunch EXPONOS.", L"Error", MB_OK | MB_ICONERROR);
 	goto B;
 
 }
