@@ -3,8 +3,8 @@
 #include <conio.h>
 #include <windows.h>
 #include <fstream>
-#include "EXPONOS1.cpp"
-#include "EXPONOS2.cpp"
+#include "exponos_features.cpp"
+#include "exponos_setup.cpp"
 #include <ctime>
 #include <time.h>
 #include <chrono>
@@ -48,7 +48,7 @@ void notes() {
 			documentt << ab;
 		}
 		if (documentt) {
-			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 			system("pause");
@@ -78,7 +78,7 @@ void notes() {
 			document << ab;
 		}
 		if (document) {
-			PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 			system("pause");
@@ -99,44 +99,44 @@ void ptrfunc(raregg *ptr) {
 int main() {
 
 	system("color 07");
-	string username;
-	string yn;
+	string first_name;
+	string option_password;
 	string setup;
 	string rest;
-	string oobe;
-	string username2;
+	string main_menu;
+	string last_name;
 
 	string check;
-	string pass;
-	string passs;
+	string password;
+	string password_check;
 
 
 
 	SetConsoleTitleA("EXPONOS");
 
 	cout << "Want to set a password? Y/N\n";
-	cin >> yn;
+	cin >> option_password;
 	system("cls");
 
-	if (yn == "y" || yn == "Y") {
+	if (option_password == "y" || option_password == "Y") {
 		system("exit");
 		Q:
 		system("cls");
 		cout << "Enter new password ";
-		cin >> pass;
-		PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		cin >> password;
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		system("cls");
 		cout << "Enter password ";
-		cin >> passs;
+		cin >> password_check;
 		system("cls");
 		int i = 0;
 		string uit;
-		if (pass != passs) {
-			while (pass != passs) {
+		if (password != password_check) {
+			while (password != password_check) {
 				cout << "Incorrect!\n";
-				PlaySound(TEXT("Windows XP Battery Critical.wav"), NULL, SND_SYNC);
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), NULL, SND_SYNC);
 				cout << "Enter password\n";
-				cin >> passs;
+				cin >> password_check;
 				system("cls");
 			}
 		}
@@ -146,23 +146,23 @@ int main() {
 		}
 
 		cout << "First Name\n";
-		cin >> username;
-		PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
+		cin >> first_name;
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), NULL, SND_SYNC);
 		system("cls");
 		cout << "Last Name\n";
-		cin >> username2;
+		cin >> last_name;
 
 		system("cls");
 
 
 	}
-	else if (yn == "N" || yn == "n") {
+	else if (option_password == "N" || option_password == "n") {
 		cout << "First Name\n";
-		cin >> username;
+		cin >> first_name;
 
 		system("cls");
 		cout << "Last Name\n";
-		cin >> username2;
+		cin >> last_name;
 
 		system("cls");
 	}
@@ -172,7 +172,7 @@ int main() {
 
 
 		Setup se;								// <-- Setup
-		se.s();
+		se.setup();
 	
 
 	system("cls");
@@ -180,7 +180,7 @@ int main() {
 	cout << "Setup Complete\n";
 	system("color 07");
 	ofstream setupdone("setup.cpp");
-	PlaySound(TEXT("done.wav"), NULL, SND_SYNC);
+	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), NULL, SND_SYNC);
 	Sleep(1000);
 	cout << "A restart is required in order for the setup to apply the changes . . .\n";
 	Sleep(4000);
@@ -201,7 +201,7 @@ int main() {
 	W:
 
 	system("cls");
-	PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	for (int i = 0; i < 2; i++)
 	{
 		cout << "Restarting . " << endl;
@@ -232,27 +232,27 @@ int main() {
 
 
 C:
-	if (yn == "y" || yn == "Y") {
+	if (option_password == "y" || option_password == "Y") {
 		cout << "Enter password ";
 		cin >> check;
 		system("cls");
 
-		if (pass != check) {
+		if (password != check) {
 			do {
 				cout << "Incorrect!\n";
-				PlaySound(TEXT("Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 				cout << "Enter password\n";
-				cin >> passs;
+				cin >> password_check;
 				system("cls");
-			} while (pass != passs);
+			} while (password != password_check);
 		}
 	}
 
-	PlaySound(TEXT("Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 B:
 	
 	system("cls");
-	cout << "Welcome " << username << " " << username2;															//<-- Main Menu
+	cout << "Welcome " << first_name << " " << last_name;															//<-- Main Menu
 	cout << "\n\n0.  Shutdown\n1.  Browser\n2.  Calculator\n3.  Credits\n4.  Media\n5.  Texter\n6.  Sorter\n7.  Report a bug or give feedback\n8.  Current Directory Command Prompt\n9.  Color\n10. Notes\n";
 	raregg* ptr;
 	raregg* ptr2;
@@ -263,11 +263,11 @@ B:
 
 
 
-	cin >> oobe;
-	if (oobe == "10") { system("cls"); notes(); goto B; }
-	if (oobe == "8") { system("start cmd.exe"); goto B; }
-	if (oobe == "03") { EXPONOS expo; expo.functi(); system("cls"); goto C; }
-	if (oobe == "9") {
+	cin >> main_menu;
+	if (main_menu == "10") { system("cls"); notes(); goto B; }
+	if (main_menu == "8") { system("start cmd.exe"); goto B; }
+	if (main_menu == "03") { EXPONOS expo; expo.functi(); system("cls"); goto C; }
+	if (main_menu == "9") {
 		system("cls");
 		cout << "1. Red\n2. Green\n3. Blue\n4. Purple\n5. Yellow\n6. Aqua\n7. White\n8. Gray\n9. Black\n0. Reset\n";
 		int co;
@@ -694,29 +694,29 @@ B:
 
 
 	}
-	if (oobe == "alpha1") {
+	if (main_menu == "alpha1") {
 		system("cls");
 
 		ptr2func(ptr2);
 		system("cls");													//<-- alpha1 Easter egg
 		goto B;
 	}
-	if (oobe == "alpha2") {
+	if (main_menu == "alpha2") {
 		system("cls");
 
 		ptrfunc(ptr);
 		system("cls");													//<-- alpha2 Easter egg
 		goto B;
 	}
-	if (oobe == "4" || oobe == "Media") {
+	if (main_menu == "4" || main_menu == "Media") {
 		music mu;
 		mu.ut();																			// <-- Media
 		system("cls");
 		goto B;
 
 	}
-	if (oobe == "0" || oobe == "Logoff" || oobe == "logout" || oobe == "Logout") {
-		PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	if (main_menu == "0" || main_menu == "Logoff" || main_menu == "logout" || main_menu == "Logout") {
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		system("cls");
 		cout << "Shutting Down .";
 		Sleep(950);
@@ -732,20 +732,20 @@ B:
 
 
 	}
-	if (oobe == "sorter" || oobe == "6") {
+	if (main_menu == "sorter" || main_menu == "6") {
 		system("cls");
 		sorter so;									// <-- Sorter
 		so.functio();
 		system("cls");
 		goto B;
 	}
-	if (oobe == "time" || oobe == "Time") {
+	if (main_menu == "time" || main_menu == "Time") {
 
 		Time time;
 		time.timee();							// <-- May be used for future development
 		goto B;
 	}
-	if (oobe == "7" || oobe == "report" || oobe == "feedback") {
+	if (main_menu == "7" || main_menu == "report" || main_menu == "feedback") {
 		system("cls");
 		system("start https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SfovCZUN0ZIM1c3TTQ2SjYyMUlMQU5DVkJISDNKWC4u");
 		cout << "Thank you for filling the form, press any key to go back to the main menu\n";
@@ -754,32 +754,32 @@ B:
 		goto B;
 
 	}
-	if (oobe == "texter" || oobe == "5") {
+	if (main_menu == "texter" || main_menu == "5") {
 		texter text;
 		text.te();								//<-- Texter
 		goto B;
 	}
-	if (oobe == "HAND") {
+	if (main_menu == "HAND") {
 		system("cls");
 		source source;							//<-- HAND Easter Egg
 		goto B;
 	}
-	if (oobe == "EXPONOS" || oobe == "exponos") {
+	if (main_menu == "EXPONOS" || main_menu == "exponos") {
 		yfm ep;
 		goto B;									//<-- EXPONOS Easter Egg
 	}
-	if (oobe == "credits" || oobe == "3") {
+	if (main_menu == "credits" || main_menu == "3") {
 		system("cls");
-		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 		cout << "Made by Angelo Petrai 2021\n";
 		cout << "Thank you for trying out my application\n";					//<-- Credits
 		cout << "Press any key to go back to the main menu . . .\n";
 		_getch();
 		system("cls");
-		PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		goto B;
 	}
-	else if (oobe == "2" || oobe == "calculator") {
+	else if (main_menu == "2" || main_menu == "calculator") {
 		system("cls");
 		cout << "1. Area  " << "2. Multiplication\n" << "3. Division ";
 		string opt;
@@ -805,7 +805,7 @@ B:
 			system("cls");
 			cout << "1. Square  2. Triangle\n3. Circle  4. Trapezium\n";
 			cin >> str;
-			if (str == "4" || str == "trapezoid") {
+			if (str == "4" || str == "trapezium") {
 				Trapezoid trap;
 				trapezoid(trap);
 				goto B;
@@ -833,7 +833,7 @@ B:
 
 
 	string menu;
-	if (oobe == "internet" || oobe == "1") {
+	if (main_menu == "internet" || main_menu == "1") {
 		system("cls");
 		cout << "Choose from the following search engines: \n 1. Google.com \n 2. Bing.com \n 3. DuckDuckGo.com \n 4. Yahoo.com \n";
 		menu = _getch();
@@ -876,7 +876,7 @@ B:
 
 	}
 
-	PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	MessageBox(NULL, L"Option is not Valid.\nUse integer value.\nIf the problem still persists relaunch EXPONOS.", L"Error", MB_OK | MB_ICONERROR);
 	goto B;
 

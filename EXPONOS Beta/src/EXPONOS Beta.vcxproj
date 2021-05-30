@@ -153,8 +153,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EXPONOS Beta.cpp" />
-    <ClCompile Include="EXPONOS1.cpp" />
-    <ClCompile Include="EXPONOS2.cpp" />
+    <ClCompile Include="exponos_features.cpp" />
+    <ClCompile Include="exponos_setup.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

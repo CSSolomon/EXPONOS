@@ -1,216 +1,839 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <conio.h>
 #include <Windows.h>
 #include <fstream>
 #include <algorithm>
-#include <vector>
-#include <time.h>
-#pragma warning(disable : 4996)
+
 
 using namespace std;
 
-class Setup {
+class EXPONOS {
 public:
-	void setupfil() {
+	void functi() {
 		system("cls");
-		for (int i = 0; i < 6; i++)
-		{
-			cout << "Scanning . " << endl;
-			Sleep(950);
-			system("cls");
-			cout << "Scanning . ." << endl;
-			Sleep(950);
-			system("cls");
-			cout << "Scanning . . ." << endl;
-			Sleep(1000);
-			system("cls");
-		}
-		fstream setupfile("setup.cpp");
-		if (setupfile) {
-			system("cls");
-			PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			cout << "File found!";
-			Sleep(3000);
-			system("cls");
-			
-		}
-		else {
-			system("cls");
-
-			PlaySound(TEXT("Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			MessageBox(NULL, L"File Not Found\nPlease go through the installation setup.", L"Error", MB_OK | MB_ICONERROR);
-			cout << "File Not Found!";
-			Sleep(3000);
-			system("cls");
-			s();
-		}
-	}
-	
-	void s() {
-		PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-		system("color 17");
-		cout << " EXPONOS Setup 1.1 Release\n";
-		cout << "____________________________\n\n\n";
-		
-
-		cout << "                          Welcome to Setup\n\n";
-		cout << "                                           * Press S to scan for an existing saved setup file\n";
-		cout << "                                           * Press any other key to install EXPONOS\n";
-		
-		string set;
-		set = _getch();
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		ofstream exp("EXPONOS.txt");
+		system("cd");
+		exp << "EXPONOS is an acronym for Expereience Of a New OS Setup, it was firstly made as a game (experiencing a setup of a new os) first ever build was on March 2021.\nEXPONOS now is starting to become more useful and more of a tool, and it will continue to do so.\nThank you for trying EXPONOS";
+		Sleep(10000);
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		system("cls");
-		if (set == "S" || set == "s") {
-
-			setupfil();
-		}
-		else {
-			PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
-			for (int i = 0; i < 3; i++) {
-
-				cout << "Thank you for installing EXPONOS\n";
-				cout << "Installing . \n";
-				Sleep(2000);
-				system("cls");
-				cout << "HINT: Easter Eggs are included\n";
-				cout << "Installing . . \n";
-				Sleep(2000);
-				system("cls");
-				cout << "Texter is included, a powerful text editor, designed for your needs!\n";
-				cout << "Installing . . .\n";
-				Sleep(2000);
-				system("cls");
-				cout << "Do arithmatic faster with the new calculator\n";
-				cout << "Installing . \n";
-				Sleep(2000);
-				system("cls");
-				cout << "To quit from the texter, type ^ \n";
-				cout << "Installing . .\n";
-				Sleep(2000);
-				system("cls");
-				cout << "EXPONOS stands for Experience Of a New OS Setup\n";
-				cout << "Installing . . .\n";
-				Sleep(2000);
-				system("cls");
-				cout << "To give feedback or report a bug type 'report'\n";
-				cout << "Installing . \n";
-				Sleep(2000);
-				system("cls");
-				cout << "To end a line in texter type endl\n";
-				cout << "Installing . . \n";
-				Sleep(2000);
-				system("cls");
-				cout << "To quit from sorter type ^\n";
-				cout << "Installing . . . \n";
-				Sleep(3000);
-				system("cls");
-			}
-
-			system("color 00");
-		}
 	}
 };
 
-class texter {
+class music {
 public:
-	void te() {
+	void ut() {
+	A:
 		system("cls");
-		int opt;
-		ifstream test("document1.txt");
-		cout << "Welcome to texter a powerful text edditor designed for your needs\n1. Create new document\n";
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		cout << "1. EXPONOS Setup\n2. Windows XP Setup\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
+		int o;
+		cin >> o;
+		system("cls");
+		if (o == 6) {
 
-		if (test) {
-			cout << "2. document1.txt";
+		}
+		if (o == 1) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			cout << "Press R to repeat\nPress any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+			}
+			else {
+				goto A;
+			}
+
 		}
 
-		cin >> opt;
-		system("cls");
+		if (o == 2) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
-		if (opt == 1) {
-			ofstream documentt("document1.txt");
-			string ab;
-			for (int i = 0; i < 999999999; i++)
+			cout << "Press R to repeat\nPress any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+
+
+			}
+			else {
+				goto A;
+			}
+
+		}
+
+
+		if (o == 3) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			cout << "Press R to repeat\nPress any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+
+			}
+			else {
+				goto A;
+			}
+
+		}
+
+
+		if (o == 4) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			cout << "Press R to repeat\nPress any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+			}
+			else {
+				goto A;
+			}
+
+		}
+
+
+		if (o == 5) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+			cout << "Press R to repeat\nPress any other key to quit";
+			string yo;
+			yo = _getch();
+			if (yo == "r" || yo == "R") {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				yo = _getch();
+				system("cls");
+				goto A;
+
+
+			}
+			else {
+				goto A;
+			}
+
+		}
+
+
+	}
+};
+
+
+class sorter {
+public:
+	string array[100];
+
+	void functio() {
+		fstream srt("sorted.txt");
+		string option;
+		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl << "To quit from sorter type ^ " << endl << endl << "1. Create a New Document" << endl;
+		if (srt) {
+			cout << "2. sorted.txt" << endl;
+		}
+		option = _getch();
+		if (option == "^") {
+			system("cls");
+		}
+		if (option == "1" || option == "2") {
+			system("cls");
+			for (int i = 0; i < 100; i++)
 			{
-
-
-				getline(cin, ab);
-				if (ab == "^") {
+				cin >> array[i];
+				if (array[i] == "^") {
+					array[i] = " ";
 					break;
 				}
-				if (ab == "endl") {
-					documentt << endl;
-					continue;
-
-				}
-				documentt << ab;
-			}
-			if (documentt) {
-				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
-				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
-				system("pause");
-				system("cls");
-			}
-		}
-		if (opt == 2) {
-			fstream document("document1.txt");
-			if (document.is_open()) {
-				cout << document.rdbuf();
 			}
 
-			string ab;
-			for (int i = 0; i < 999999999; i++)
-			{
+			sort(begin(array), end(array));
 
-
-				getline(cin, ab);
-				if (ab == "^") {
-					break;
-				}
-				if (ab == "endl") {
-					document << endl;
-					continue;
-
-				}
-				document << ab;
-			}
-			if (document) {
-				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
-				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
-				system("pause");
-				system("cls");
-			}
-		}
-
-
-
-
-
-
-
-
-	}
-
-};
-
-class Time {
-public:
-											// <-- May be used for future developement
-	void timee() {
-		time_t t = time(0);
-		char* date_time = ctime(&t);
-		int i = 0;
-		while (i != 10) {
+			ofstream sorted("sorted.txt");
 			system("cls");
-
-			cout << date_time;
-			Sleep(2000);
-			i++;
-
+			for (string i : array)
+			{
+				cout << i << " ";
+				sorted << i << " ";
+			}
+			cout << endl;
+			cout << "Press any key to save the document and go back to the main menu . . ." << endl;
+			_getch();
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			MessageBox(NULL, L"Document saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
 		}
 	}
 };
 
+class square {
+public:
+	square() {
+		system("cls");
+		int a, b;
+		cout << "Enter Width: ";
+		cin >> a;
+		system("cls");
+		cout << "Enter Length: ";
+		cin >> b;
+		system("cls");
+		cout << a * b << "\n";
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+	}
+};
+
+class triangle {
+public:
+	int c, d;
+	triangle() {
+		system("cls");
+		cout << "Enter Width: ";
+		cin >> c;
+		system("cls");
+		cout << "Enter Length: ";
+		cin >> d;
+		system("cls");
+		cout << c * d / 2 << "\n";
+		int resulttt = c * d / 2;
+		ofstream file("result of triangle.txt");
+		file << resulttt;
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		MessageBox(NULL, L"Result saved at app directory", L" ", MB_OK | MB_ICONINFORMATION);
+		system("pause");
+		system("cls");
+	}
+};
+
+class Circle {
+private:
+	double radius;
+	double pi = 3.141592653589;
+public:
+	friend void circle(Circle c) {
+
+		system("cls");
+		cout << "Radius ";
+		cin >> c.radius;
+		system("cls");
+		cout << c.pi * c.radius * c.radius << "\n";
+		double resultt = c.pi * c.radius * c.radius;
+		system("pause");
+		ofstream re("result of circle.txt");
+		re << resultt;
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+	}
+};
+
+class Trapezoid {
+private:
+	double a, b, h;
+	double c = 2;
+public:
+
+	friend void trapezoid(Trapezoid trap) {
+		system("cls");
+		cout << "Base ";
+		cin >> trap.a;
+		system("cls");
+		cout << "Second base ";
+		cin >> trap.b;
+		system("cls");
+		cout << "Height ";
+		cin >> trap.h;
+		system("cls");
+		cout << trap.a + trap.b / 2 * trap.h << "\n";
+		double res = trap.a + trap.b / 2 * trap.h;
+		system("pause");
+		ofstream doc("result of trapezoid.txt");
+		doc << res;
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
+		system("cls");
+
+	}
+
+};
+
+
+
+class multiplication {
+public:
+	multiplication() {
+		int a, b;
+		cout << "How many numbers would you like to multiply (min 2 - max 10) \n";
+		cin >> a;
+
+		switch (a) {
+		case 2:
+			double n, u, m, l, v, j, h, y, z, k;
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << n * u << "\n";
+			system("pause");
+
+			break;
+		case 3:
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << n * u * m << "\n";
+			system("pause");
+
+			break;
+		case 4:
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << n * u * m * l << "\n";
+			system("pause");
+
+			break;
+		case 5:
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> v;
+			system("cls");
+			cout << n * u * m * l * v << "\n";
+			system("pause");
+
+			break;
+		case 6:
+
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> j;
+			system("cls");
+			cout << "Enter sixth number: ";
+			cin >> v;
+			system("cls");
+			cout << n * u * m * l * v * j << "\n";
+			system("pause");
+			break;
+		case 7:
+
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> j;
+			system("cls");
+			cout << "Enter sixth number: ";
+			cin >> v;
+			system("cls");
+			cout << "Enter seventh number: ";
+			cin >> h;
+			system("cls");
+			cout << n * u * m * l * v * h * j << "\n";
+			system("pause");
+			break;
+		case 8:
+
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> j;
+			system("cls");
+			cout << "Enter sixth number: ";
+			cin >> v;
+			system("cls");
+			cout << "Enter seventh number: ";
+			cin >> h;
+			system("cls");
+			cout << "Enter eigth number: ";
+			cin >> y;
+			system("cls");
+			cout << n * u * m * l * v * h * j * y << "\n";
+			system("pause");
+			break;
+		case 9 :
+
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> j;
+			system("cls");
+			cout << "Enter sixth number: ";
+			cin >> v;
+			system("cls");
+			cout << "Enter seventh number: ";
+			cin >> h;
+			system("cls");
+			cout << "Enter eigth number: ";
+			cin >> y;
+			system("cls");
+			cout << "Enter ninth number: ";
+			cin >> z;
+
+			system("cls");
+			cout << n * u * m * l * v * h * y * j * z << "\n";
+			system("pause");
+			break;
+		case 10:
+
+
+			cout << "Enter first number: ";
+			cin >> n;
+			system("cls");
+			cout << "Enter second number: ";
+			cin >> u;
+			system("cls");
+			cout << "Enter third number: ";
+			cin >> m;
+			system("cls");
+			cout << "Enter fourth number: ";
+			cin >> l;
+			system("cls");
+			cout << "Enter fith number: ";
+			cin >> j;
+			system("cls");
+			cout << "Enter sixth number: ";
+			cin >> v;
+			system("cls");
+			cout << "Enter seventh number: ";
+			cin >> h;
+			system("cls");
+			cout << "Enter eigth number: ";
+			cin >> y;
+			system("cls");
+			cout << "Enter ninth number: ";
+			cin >> z;
+			system("cls");
+			cout << "Enter tenth number: ";
+			cin >> k;
+
+			system("cls");
+			cout << n * u * m * l * v * h * y * j * z * k << "\n";
+			system("pause");
+			break;
+		}
+	}
+};
+
+class Division {
+public:
+
+		void division() {
+			int a, b;
+			cout << "How many numbers would you like to divide (min 2 - max 10) \n";
+			cin >> a;
+
+			switch (a) {
+			case 2:
+				double n, u, m, l, v, j, h, y, z, k;
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << n / u << "\n";
+				system("pause");
+
+				break;
+			case 3:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << n / u / m << "\n";
+				system("pause");
+
+				break;
+			case 4:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << n / u / m / l << "\n";
+				system("pause");
+
+				break;
+			case 5:
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> v;
+				system("cls");
+				cout << n / u / m / l / v << "\n";
+				system("pause");
+
+				break;
+			case 6:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << n / u / m / l / v / j << "\n";
+				system("pause");
+				break;
+			case 7:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << n / u / m / l / v / h / j << "\n";
+				system("pause");
+				break;
+			case 8:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << n / u / m / l / v / h / j / y << "\n";
+				system("pause");
+				break;
+			case 9:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << "Enter ninth number: ";
+				cin >> z;
+
+				system("cls");
+				cout << n / u / m / l / v / h / y / j / z << "\n";
+				system("pause");
+				break;
+			case 10:
+
+
+				cout << "Enter first number: ";
+				cin >> n;
+				system("cls");
+				cout << "Enter second number: ";
+				cin >> u;
+				system("cls");
+				cout << "Enter third number: ";
+				cin >> m;
+				system("cls");
+				cout << "Enter fourth number: ";
+				cin >> l;
+				system("cls");
+				cout << "Enter fith number: ";
+				cin >> j;
+				system("cls");
+				cout << "Enter sixth number: ";
+				cin >> v;
+				system("cls");
+				cout << "Enter seventh number: ";
+				cin >> h;
+				system("cls");
+				cout << "Enter eigth number: ";
+				cin >> y;
+				system("cls");
+				cout << "Enter ninth number: ";
+				cin >> z;
+				system("cls");
+				cout << "Enter tenth number: ";
+				cin >> k;
+
+				system("cls");
+				cout << n / u / m / l / v / h / y / j / z / k << "\n";
+				system("pause");
+				break;
+			}
+		}
+};
+
+class egg {
+public:
+	void setv(string x) {
+		easter = x;
+	}
+	void setv2(string b) {
+		eggy = b;
+	}
+	void setv3(string c) {
+		eggg = c;
+	}
+	string variable1() {
+		return easter;
+	}
+	string variable2() {
+		return eggy;
+	}
+	string variable3() {
+		return eggg;
+	}
+private:
+	string easter, eggy, eggg;
+};
+
+
+
+class yfm : public egg {
+public:
+	yfm() {
+
+		system("cls");
+		ofstream me("about me.txt");
+		me << "About me:\nMy name is Angelo Petrai, the developer of this app. I was born on May 7th 2008. I've been a tech enthusiast since I was 3 years old. I've been learning C++ for about 5 months and I'm still continuing to do so. If you found this easter egg then congratulations. I really appreciate you User, for taking your time to try out my app. I hope that you enjoyed my app :)";
+		me.close();
+		system("cd");
+
+		Sleep(10000);
+		system("cls");
+
+	}
+};
+
+class source : public egg {
+
+public:
+	egg a;
+	source() {
+		string a, b, c;
+		cin >> a;
+		system("cls");
+		cin >> b;
+		system("cls");
+		cin >> c;
+		system("cls");
+		if (a == "7" && b == "5" && c == "8") {
+
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			MessageBox(NULL, L"Have A Nice Day", L"HAND", MB_OK | MB_ICONWARNING);
+
+
+		}
+	}
+
+};
+
+class raregg {
+public:
+	 virtual void fu() {
+
+		system("cls");
+		system("start project1.exe");
+		system("exit");
+	}
+
+
+};
+
+class raregg2 : public raregg {
+public:
+	 void fu() {
+		system("cls");
+		system("start project2.exe");
+		system("cls");
+	}
+};
+
+
+class EXPONOSs {
+public:
+	virtual void func() {
+
+	}
+};
