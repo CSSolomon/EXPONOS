@@ -14,6 +14,7 @@ class Setup {
 public:
 	void setupfile() {
 		system("cls");
+		//PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		for (int i = 0; i < 6; i++)
 		{
 			cout << "Scanning . " << endl;
@@ -43,21 +44,19 @@ public:
 			cout << "File Not Found!";
 			Sleep(3000);
 			system("cls");
-			setup();
+			setupwiz();
 		}
 	}
 	
-	void setup() {
+	void setupwiz() {
 		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 		system("color 17");
 		cout << endl;
-		cout << " EXPONOS Setup 1.1 Release\n";
-		cout << "____________________________\n\n\n";
-		
-
-		cout << "                          Welcome to Setup\n\n";
-		cout << "                                           * Press S to scan for an existing saved setup file\n";
-		cout << "                                           * Press any other key to install EXPONOS\n";
+		cout << " EXPONOS Setup 1.2 Release\n";
+		cout << "____________________________\n\n\n\n";
+		cout << "                              Welcome to Setup\n\n";
+		cout << "                                              * Press S to scan for an existing saved setup file\n";
+		cout << "                                              * Press any other key to install EXPONOS\n";
 		
 		string set;
 		set = _getch();
@@ -67,9 +66,9 @@ public:
 			setupfile();
 		}
 		else {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			//PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);    <-- ( Not decided Yet )
 
-			for (int i = 0; i < 3; i++) {
+			for (int i = 0; i < 6; i++) {
 
 				cout << "Thank you for installing EXPONOS\n";
 				cout << "Installing . \n";
@@ -119,10 +118,10 @@ public:
 	void te() {
 		system("cls");
 		int opt;
-		ifstream test("document1.txt");
+		ifstream docu_check("document1.txt");
 		cout << "Welcome to texter a powerful text edditor designed for your needs\n1. Create new document\n";
 
-		if (test) {
+		if (docu_check) {
 			cout << "2. document1.txt";
 		}
 
@@ -131,25 +130,22 @@ public:
 
 		if (opt == 1) {
 			ofstream documentt("document1.txt");
-			string ab;
+			string docu_write;
 			for (int i = 0; i < 999999999; i++)
 			{
-
-
-				getline(cin, ab);
-				if (ab == "^") {
+				getline(cin, docu_write);
+				if (docu_write == "^") {
 					break;
 				}
-				if (ab == "endl") {
+				if (docu_write == "endl") {
 					documentt << endl;
 					continue;
 
 				}
-				documentt << ab;
+				documentt << docu_write;
 			}
 			if (documentt) {
 				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
 				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 				system("pause");
 				system("cls");
@@ -161,21 +157,21 @@ public:
 				cout << document.rdbuf();
 			}
 
-			string ab;
+			string docu_write2;
 			for (int i = 0; i < 999999999; i++)
 			{
 
 
-				getline(cin, ab);
-				if (ab == "^") {
+				getline(cin, docu_write2);
+				if (docu_write2 == "^") {
 					break;
 				}
-				if (ab == "endl") {
+				if (docu_write2 == "endl") {
 					document << endl;
 					continue;
 
 				}
-				document << ab;
+				document << docu_write2;
 			}
 			if (document) {
 				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);

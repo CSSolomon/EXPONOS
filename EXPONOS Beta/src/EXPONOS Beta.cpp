@@ -86,18 +86,8 @@ void notes() {
 		}
 	}
 }
-void ptr2func(raregg* ptr2) {
-	ptr2->fu();
-}
-
-void ptrfunc(raregg *ptr) {
-	ptr->fu();
-}
-
-
 
 int main() {
-
 	system("color 07");
 	string first_name;
 	string option_password;
@@ -105,22 +95,18 @@ int main() {
 	string rest;
 	string main_menu;
 	string last_name;
-
 	string check;
 	string password;
 	string password_check;
 
-
-
 	SetConsoleTitleA("EXPONOS");
-
 	cout << "Want to set a password? Y/N\n";
 	cin >> option_password;
 	system("cls");
 
 	if (option_password == "y" || option_password == "Y") {
 		system("exit");
-		Q:
+	Q:
 		system("cls");
 		cout << "Enter new password ";
 		cin >> password;
@@ -151,10 +137,7 @@ int main() {
 		system("cls");
 		cout << "Last Name\n";
 		cin >> last_name;
-
 		system("cls");
-
-
 	}
 	else if (option_password == "N" || option_password == "n") {
 		cout << "First Name\n";
@@ -169,12 +152,9 @@ int main() {
 	else {
 		return 0;
 	}
-
-
 		Setup se;								// <-- Setup
-		se.setup();
+		se.setupwiz();
 	
-
 	system("cls");
 	system("color 07");
 	cout << "Setup Complete\n";
@@ -194,12 +174,9 @@ int main() {
 	cout << "Restart in 1 . . .\n";
 	Sleep(1000);
 
-
-
 	system("color 07");
 
 	W:
-
 	system("cls");
 	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 	for (int i = 0; i < 2; i++)
@@ -229,14 +206,11 @@ int main() {
 		Sleep(1000);
 		system("cls");
 	}
-
-
 C:
 	if (option_password == "y" || option_password == "Y") {
 		cout << "Enter password ";
 		cin >> check;
 		system("cls");
-
 		if (password != check) {
 			do {
 				cout << "Incorrect!\n";
@@ -247,10 +221,8 @@ C:
 			} while (password != password_check);
 		}
 	}
-
 	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 B:
-	
 	system("cls");
 	cout << "Welcome " << first_name << " " << last_name;															//<-- Main Menu
 	cout << "\n\n0.  Shutdown\n1.  Browser\n2.  Calculator\n3.  Credits\n4.  Media\n5.  Texter\n6.  Sorter\n7.  Report a bug or give feedback\n8.  Current Directory Command Prompt\n9.  Color\n10. Notes\n";
@@ -260,8 +232,6 @@ B:
 	raregg alpha1;
 	ptr = &alpha2;
 	ptr2 = &alpha1;
-
-
 
 	cin >> main_menu;
 	if (main_menu == "10") { system("cls"); notes(); goto B; }
@@ -311,13 +281,8 @@ B:
 				case 9:
 					system("color 94");
 					break;
-
-
-
 				}
-				
 			}
-			
 			break;
 		case 2:
 			system("color a");
@@ -355,11 +320,7 @@ B:
 				case 9:
 					system("color 9a");
 					break;
-
-
-
 				}
-
 			}
 			break;
 		case 3:
@@ -398,13 +359,8 @@ B:
 				case 9:
 					system("color 91");
 					break;
-
-
-
 				}
-
 			}
-			
 			break;
 		case 4:
 			system("color 5");
@@ -442,11 +398,7 @@ B:
 				case 9:
 					system("color 95");
 					break;
-
-
-
 				}
-
 			}
 			break;
 		case 5:
@@ -485,11 +437,7 @@ B:
 				case 9:
 					system("color 96");
 					break;
-
-
-
 				}
-
 			}
 			break;
 		case 6:
@@ -528,9 +476,6 @@ B:
 				case 9:
 					system("color 93");
 					break;
-
-
-
 				}
 
 			}
@@ -571,9 +516,6 @@ B:
 				case 9:
 					system("color 97");
 					break;
-
-
-
 				}
 
 			}
@@ -614,9 +556,6 @@ B:
 				case 9:
 					system("color 98");
 					break;
-
-
-
 				}
 
 			}
@@ -657,19 +596,11 @@ B:
 				case 9:
 					system("color 90");
 					break;
-
-
-
 				}
-
 			}
 			break;
-
 		case 0:
 			system("color 07");
-
-
-
 		}
 
 		system("cls");
@@ -685,26 +616,19 @@ B:
 		cout << "Restart in 1 . . .\n";
 		Sleep(1000);
 		system("cls");
-
-
 		goto W;
-
-
-
-
-
 	}
 	if (main_menu == "alpha1") {
 		system("cls");
 
-		ptr2func(ptr2);
+		ptr2->funciton();
 		system("cls");													//<-- alpha1 Easter egg
 		goto B;
 	}
 	if (main_menu == "alpha2") {
 		system("cls");
 
-		ptrfunc(ptr);
+		ptr->funciton();
 		system("cls");													//<-- alpha2 Easter egg
 		goto B;
 	}
@@ -713,7 +637,6 @@ B:
 		mu.ut();																			// <-- Media
 		system("cls");
 		goto B;
-
 	}
 	if (main_menu == "0" || main_menu == "Logoff" || main_menu == "logout" || main_menu == "Logout") {
 		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
@@ -728,14 +651,11 @@ B:
 		Sleep(2500);
 		system("cls");
 		return 0;
-
-
-
 	}
 	if (main_menu == "sorter" || main_menu == "6") {
 		system("cls");
 		sorter so;									// <-- Sorter
-		so.functio();
+		so.functi();
 		system("cls");
 		goto B;
 	}
@@ -752,7 +672,6 @@ B:
 		_getch();
 		system("cls");
 		goto B;
-
 	}
 	if (main_menu == "texter" || main_menu == "5") {
 		texter text;
@@ -770,7 +689,7 @@ B:
 	}
 	if (main_menu == "credits" || main_menu == "3") {
 		system("cls");
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
 		cout << "Made by Angelo Petrai 2021\n";
 		cout << "Thank you for trying out my application\n";					//<-- Credits
 		cout << "Press any key to go back to the main menu . . .\n";
@@ -801,28 +720,28 @@ B:
 
 		}
 		if (opt == "1" || opt == "area") {
-			string str;
+			string choice;
 			system("cls");
 			cout << "1. Square  2. Triangle\n3. Circle  4. Trapezium\n";
-			cin >> str;
-			if (str == "4" || str == "trapezium") {
+			cin >> choice;
+			if (choice == "4" || choice == "trapezium") {
 				Trapezoid trap;
 				trapezoid(trap);
 				goto B;
 			}
-			if (str == "circle" || str == "3") {
+			if (choice == "circle" || choice == "3") {
 				system("cls");
 				Circle c;
 				circle(c);
 				system("cls");
 				goto B;
 			}
-			if (str == "triangle" || str == "2") {
+			if (choice == "triangle" || choice == "2") {
 				system("cls");
 				triangle tri;
 				goto B;
 			}
-			else if (str == "square" || str == "1") {
+			else if (choice == "square" || choice == "1") {
 				square sq;
 				system("cls");
 				goto B;
@@ -830,7 +749,6 @@ B:
 
 		}
 	}
-
 
 	string menu;
 	if (main_menu == "internet" || main_menu == "1") {

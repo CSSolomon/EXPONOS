@@ -5,7 +5,6 @@
 #include <fstream>
 #include <algorithm>
 
-
 using namespace std;
 
 class EXPONOS {
@@ -28,37 +27,29 @@ public:
 	A:
 		system("cls");
 		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		cout << "1. EXPONOS Setup\n2. Windows XP Setup\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
+		cout << "1. EXPONOS Setup\n2. Credits Song\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
 		int o;
 		cin >> o;
 		system("cls");
-		if (o == 6) {
-
-		}
-		if (o == 1) {
+		if (o == 6) {}
+		
+		if (o == 2) {
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
 			if (yo == "r" || yo == "R") {
 				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-
 				yo = _getch();
 				system("cls");
 				goto A;
-
-
 			}
 			else {
 				goto A;
 			}
-
 		}
-
-		if (o == 2) {
+		if (o == 1) {
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -67,21 +58,13 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-
-
-
-
 			}
 			else {
 				goto A;
 			}
-
 		}
-
-
 		if (o == 3) {
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -90,20 +73,14 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-
-
-
 			}
 			else {
 				goto A;
 			}
-
 		}
-
 
 		if (o == 4) {
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
 			cout << "Press R to repeat\nPress any other key to quit";
 			string yo;
 			yo = _getch();
@@ -112,46 +89,35 @@ public:
 				yo = _getch();
 				system("cls");
 				goto A;
-
-
 			}
 			else {
 				goto A;
 			}
-
 		}
-
-
 		if (o == 5) {
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 
 			cout << "Press R to repeat\nPress any other key to quit";
-			string yo;
-			yo = _getch();
-			if (yo == "r" || yo == "R") {
+			string option;
+			option = _getch();
+			if (option == "r" || option == "R") {
 				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-				yo = _getch();
+				option = _getch();
 				system("cls");
 				goto A;
-
-
 			}
 			else {
 				goto A;
 			}
 
 		}
-
-
 	}
 };
-
 
 class sorter {
 public:
 	string array[100];
-
-	void functio() {
+	void functi() {
 		fstream srt("sorted.txt");
 		string option;
 		cout << "Welcome to Sorter, sorting words alphabetically made easier with Sorter" << endl << "To quit from sorter type ^ " << endl << endl << "1. Create a New Document" << endl;
@@ -172,15 +138,15 @@ public:
 					break;
 				}
 			}
-
 			sort(begin(array), end(array));
-
 			ofstream sorted("sorted.txt");
 			system("cls");
 			for (string i : array)
 			{
 				cout << i << " ";
+				if (i == "") { system("cls"); continue; }
 				sorted << i << " ";
+				
 			}
 			cout << endl;
 			cout << "Press any key to save the document and go back to the main menu . . ." << endl;
@@ -236,7 +202,6 @@ private:
 	double pi = 3.141592653589;
 public:
 	friend void circle(Circle c) {
-
 		system("cls");
 		cout << "Radius ";
 		cin >> c.radius;
@@ -256,7 +221,6 @@ private:
 	double a, b, h;
 	double c = 2;
 public:
-
 	friend void trapezoid(Trapezoid trap) {
 		system("cls");
 		cout << "Base ";
@@ -276,12 +240,8 @@ public:
 		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		MessageBox(NULL, L"Result saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 		system("cls");
-
 	}
-
 };
-
-
 
 class multiplication {
 public:
@@ -289,7 +249,6 @@ public:
 		int a, b;
 		cout << "How many numbers would you like to multiply (min 2 - max 10) \n";
 		cin >> a;
-
 		switch (a) {
 		case 2:
 			double n, u, m, l, v, j, h, y, z, k;
@@ -301,7 +260,6 @@ public:
 			system("cls");
 			cout << n * u << "\n";
 			system("pause");
-
 			break;
 		case 3:
 
@@ -316,7 +274,6 @@ public:
 			system("cls");
 			cout << n * u * m << "\n";
 			system("pause");
-
 			break;
 		case 4:
 
@@ -334,7 +291,6 @@ public:
 			system("cls");
 			cout << n * u * m * l << "\n";
 			system("pause");
-
 			break;
 		case 5:
 
@@ -359,7 +315,6 @@ public:
 			break;
 		case 6:
 
-
 			cout << "Enter first number: ";
 			cin >> n;
 			system("cls");
@@ -382,7 +337,6 @@ public:
 			system("pause");
 			break;
 		case 7:
-
 
 			cout << "Enter first number: ";
 			cin >> n;
@@ -409,7 +363,6 @@ public:
 			system("pause");
 			break;
 		case 8:
-
 
 			cout << "Enter first number: ";
 			cin >> n;
@@ -440,7 +393,6 @@ public:
 			break;
 		case 9 :
 
-
 			cout << "Enter first number: ";
 			cin >> n;
 			system("cls");
@@ -467,13 +419,11 @@ public:
 			system("cls");
 			cout << "Enter ninth number: ";
 			cin >> z;
-
 			system("cls");
 			cout << n * u * m * l * v * h * y * j * z << "\n";
 			system("pause");
 			break;
 		case 10:
-
 
 			cout << "Enter first number: ";
 			cin >> n;
@@ -504,7 +454,6 @@ public:
 			system("cls");
 			cout << "Enter tenth number: ";
 			cin >> k;
-
 			system("cls");
 			cout << n * u * m * l * v * h * y * j * z * k << "\n";
 			system("pause");
@@ -515,12 +464,10 @@ public:
 
 class Division {
 public:
-
 		void division() {
 			int a, b;
 			cout << "How many numbers would you like to divide (min 2 - max 10) \n";
 			cin >> a;
-
 			switch (a) {
 			case 2:
 				double n, u, m, l, v, j, h, y, z, k;
@@ -532,7 +479,6 @@ public:
 				system("cls");
 				cout << n / u << "\n";
 				system("pause");
-
 				break;
 			case 3:
 
@@ -547,7 +493,6 @@ public:
 				system("cls");
 				cout << n / u / m << "\n";
 				system("pause");
-
 				break;
 			case 4:
 
@@ -565,7 +510,6 @@ public:
 				system("cls");
 				cout << n / u / m / l << "\n";
 				system("pause");
-
 				break;
 			case 5:
 
@@ -590,7 +534,6 @@ public:
 				break;
 			case 6:
 
-
 				cout << "Enter first number: ";
 				cin >> n;
 				system("cls");
@@ -613,7 +556,6 @@ public:
 				system("pause");
 				break;
 			case 7:
-
 
 				cout << "Enter first number: ";
 				cin >> n;
@@ -640,7 +582,6 @@ public:
 				system("pause");
 				break;
 			case 8:
-
 
 				cout << "Enter first number: ";
 				cin >> n;
@@ -671,7 +612,6 @@ public:
 				break;
 			case 9:
 
-
 				cout << "Enter first number: ";
 				cin >> n;
 				system("cls");
@@ -698,13 +638,11 @@ public:
 				system("cls");
 				cout << "Enter ninth number: ";
 				cin >> z;
-
 				system("cls");
 				cout << n / u / m / l / v / h / y / j / z << "\n";
 				system("pause");
 				break;
 			case 10:
-
 
 				cout << "Enter first number: ";
 				cin >> n;
@@ -735,7 +673,6 @@ public:
 				system("cls");
 				cout << "Enter tenth number: ";
 				cin >> k;
-
 				system("cls");
 				cout << n / u / m / l / v / h / y / j / z / k << "\n";
 				system("pause");
@@ -773,21 +710,17 @@ private:
 class yfm : public egg {
 public:
 	yfm() {
-
 		system("cls");
 		ofstream me("about me.txt");
 		me << "About me:\nMy name is Angelo Petrai, the developer of this app. I was born on May 7th 2008. I've been a tech enthusiast since I was 3 years old. I've been learning C++ for about 5 months and I'm still continuing to do so. If you found this easter egg then congratulations. I really appreciate you User, for taking your time to try out my app. I hope that you enjoyed my app :)";
 		me.close();
 		system("cd");
-
 		Sleep(10000);
 		system("cls");
-
 	}
 };
 
 class source : public egg {
-
 public:
 	egg a;
 	source() {
@@ -799,41 +732,32 @@ public:
 		cin >> c;
 		system("cls");
 		if (a == "7" && b == "5" && c == "8") {
-
 			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 			MessageBox(NULL, L"Have A Nice Day", L"HAND", MB_OK | MB_ICONWARNING);
-
-
 		}
 	}
-
 };
 
 class raregg {
 public:
-	 virtual void fu() {
-
+	 virtual void funciton() {
 		system("cls");
 		system("start project1.exe");
 		system("exit");
 	}
-
-
 };
 
 class raregg2 : public raregg {
 public:
-	 void fu() {
+	 void function() {
 		system("cls");
 		system("start project2.exe");
 		system("cls");
 	}
 };
 
-
 class EXPONOSs {
 public:
 	virtual void func() {
-
 	}
 };
