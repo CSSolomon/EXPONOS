@@ -24,92 +24,93 @@ public:
 class music {
 public:
 	void ut() {
-	A:
-		system("cls");
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-		cout << "1. EXPONOS Setup\n2. Credits Song\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
-		int o;
-		cin >> o;
-		system("cls");
-		if (o == 6) {}
-		
-		if (o == 2) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			cout << "Press R to repeat\nPress any other key to quit";
-			string yo;
-			yo = _getch();
-			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-				yo = _getch();
-				system("cls");
-				goto A;
-			}
-			else {
-				goto A;
-			}
-		}
-		if (o == 1) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			cout << "Press R to repeat\nPress any other key to quit";
-			string yo;
-			yo = _getch();
-			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-				yo = _getch();
-				system("cls");
-				goto A;
-			}
-			else {
-				goto A;
-			}
-		}
-		if (o == 3) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			cout << "Press R to repeat\nPress any other key to quit";
-			string yo;
-			yo = _getch();
-			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
-				yo = _getch();
-				system("cls");
-				goto A;
-			}
-			else {
-				goto A;
-			}
-		}
+		while (true) {
+			system("cls");
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			cout << "1. EXPONOS Setup\n2. Credits Song\n3. The Microsoft Sound\n4. EXPONOS Startup\n5. EXPONOS Shut down\n6. Go back to main menu\n";
+			int o;
+			cin >> o;
+			system("cls");
+			if (o == 6) { break; }
 
-		if (o == 4) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-			cout << "Press R to repeat\nPress any other key to quit";
-			string yo;
-			yo = _getch();
-			if (yo == "r" || yo == "R") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+			if (o == 2) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				cout << "Press R to repeat\nPress any other key to quit";
+				string yo;
 				yo = _getch();
-				system("cls");
-				goto A;
+				if (yo == "r" || yo == "R") {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+					yo = _getch();
+					system("cls");
+					continue;
+				}
+				else {
+					continue;
+				}
 			}
-			else {
-				goto A;
+			if (o == 1) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				cout << "Press R to repeat\nPress any other key to quit";
+				string yo;
+				yo = _getch();
+				if (yo == "r" || yo == "R") {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+					yo = _getch();
+					system("cls");
+					continue;
+				}
+				else {
+					continue;
+				}
 			}
-		}
-		if (o == 5) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			if (o == 3) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				cout << "Press R to repeat\nPress any other key to quit";
+				string yo;
+				yo = _getch();
+				if (yo == "r" || yo == "R") {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\mssound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+					yo = _getch();
+					system("cls");
+					continue;
+				}
+				else {
+					continue;
+				}
+			}
 
-			cout << "Press R to repeat\nPress any other key to quit";
-			string option;
-			option = _getch();
-			if (option == "r" || option == "R") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+			if (o == 4) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				cout << "Press R to repeat\nPress any other key to quit";
+				string yo;
+				yo = _getch();
+				if (yo == "r" || yo == "R") {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+					yo = _getch();
+					system("cls");
+					continue;
+				}
+				else {
+					continue;
+				}
+			}
+			if (o == 5) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+				cout << "Press R to repeat\nPress any other key to quit";
+				string option;
 				option = _getch();
-				system("cls");
-				goto A;
-			}
-			else {
-				goto A;
-			}
+				if (option == "r" || option == "R") {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+					option = _getch();
+					system("cls");
+					continue;
+				}
+				else {
+					continue;
+				}
 
+			}
 		}
 	}
 };
