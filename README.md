@@ -1,26 +1,41 @@
 # EXPONOS
 
-EXPONOS stands for Experience Of a New OS Setup (Acronym)
-This was first made as a game but it's purpose is now actually starting to become useful for the User.
-Although it may be required to run the full executable as an administatrator for all the features to fully function.
+**EXP**erience **O**f a **N**ew **OS**
 
-## FEATURES
+[[_TOC_]]
 
-Calculator: Can calculate arithmatic and ares of basic geometry shapes such as, square, triangle, trapezium, circle.
-Texter: Designed to do basic documents and will save it in the software's directory.
-Sorter: Sorts word Alphabetically.
-CD CMD: ( Current Directory Command Prompt tool ) Opens up a CMD window. The user can see all the files in the directory without going to the file explorer.
-Color: Let's the User have a more personalized experience by changing the color of the background and foreground of EXPONOS.
-Browser: Give's a choice to the User to be redirected to their deafult browser to browse the internet with their preferred search engine.
+# Introduction
 
-## GOAL
+This software was initially made as a game, however it evolved in its purpose and is now starting to become useful for the User.
+For full functionality of all features, running with administrative permissions is required.
 
-The goal of the EXPONOS is to be a useful tool for the User.
+## Features
 
-## FIRST VERSION DATE
+| ---- | --- |
+| Calculator | Can calculate arithmatic and ares of basic geometry shapes such as, square, triangle, trapezium, circle |
+| Texter|  Designed to do basic documents and will save it in the software's directory |
+| Sorter|  Sorts word Alphabetically |
+| CD CMD|  ( Current Directory Command Prompt tool ) Opens up a CMD window. The user can see all the files in the directory without going to the file explorer | 
+| Color| Let's the User have a more personalized experience by changing the color of the background and foreground of EXPONOS |
+| Browser| Give's a choice to the User to be redirected to their deafult browser to browse the internet with their preferred search engine |
 
-EXPONOS 1.0 was released in May 2021.
+## Command examples
 
-## LICENSE
+### Calculator
 
-**License info can be found here: https://github.com/Gamerguy123lo/EXPONOS/blob/master/LICENSE**
+```
+$ ./Calculator ...
+```
+
+# Version and Licensing
+
+The software is released as-is and is provided without any warranties. Users deploy it at their own risk and no responsibility is accepted in case of issues.
+You may deploy the software in a virtual machine for added safety
+
+Licensing info can be found [here](./LICENSE)
+
+# References
+
+## Links
+
+1. [Link Text](URL)
