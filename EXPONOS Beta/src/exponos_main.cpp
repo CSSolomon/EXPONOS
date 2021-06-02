@@ -8,13 +8,18 @@
 #include <ctime>
 #include <time.h>
 #include <chrono>
-
-
-
-
-
 using namespace std;
+
 void notes() {
+	std::fstream task_completed_sound("done.wav");
+	std::fstream setup_sound("setup.wav");
+	std::fstream microsoft_sound("mssound.wav");
+	std::fstream credits_sound("win98.wav");
+	std::fstream startup_sound("Windows 2000 Logon Sound.wav");
+	std::fstream shutdown_sound("Windows 2000 Logoff Sound.wav");
+	std::fstream critical_error_sound("Windows XP Battery Critical.wav");
+	std::fstream notice_sound("ding.wav");
+	std::fstream error_sound("Windows XP Critical Stop.wav");
 	system("cls");
 	string opt;
 	ifstream test("Notes.txt");
@@ -34,8 +39,6 @@ void notes() {
 		string ab;
 		for (int i = 0; i < 999999999; i++)
 		{
-
-
 			getline(cin, ab);
 			if (ab == "^") {
 				break;
@@ -43,13 +46,16 @@ void notes() {
 			if (ab == "endl") {
 				documentt << endl;
 				continue;
-
 			}
 			documentt << ab;
 		}
 		if (documentt) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
+			if (notice_sound) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
+			else {
+				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
 			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 			system("pause");
 			system("cls");
@@ -78,8 +84,12 @@ void notes() {
 			document << ab;
 		}
 		if (document) {
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
+			if (notice_sound) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
+			else {
+				PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
 			MessageBox(NULL, L"Note saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 			system("pause");
 			system("cls");
@@ -89,6 +99,15 @@ void notes() {
 
 int main() {
 	system("color 07");
+	std::fstream task_completed_sound("done.wav");
+	std::fstream setup_sound("setup.wav");
+	std::fstream microsoft_sound("mssound.wav");
+	std::fstream credits_sound("win98.wav");
+	std::fstream startup_sound("Windows 2000 Logon Sound.wav");
+	std::fstream shutdown_sound("Windows 2000 Logoff Sound.wav");
+	std::fstream critical_error_sound("Windows XP Battery Critical.wav");
+	std::fstream notice_sound("ding.wav");
+	std::fstream error_sound("Windows XP Critical Stop.wav");
 	string first_name;
 	string option_password;
 	string setup;
@@ -109,7 +128,12 @@ int main() {
 		system("cls");
 		cout << "Enter new password ";
 		cin >> password;
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		if (task_completed_sound) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
+		else {
+			PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
 		system("cls");
 		cout << "Enter password ";
 		cin >> password_check;
@@ -119,7 +143,12 @@ int main() {
 		if (password != password_check) {
 			while (password != password_check) {
 				cout << "Incorrect!\n";
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), NULL, SND_SYNC);
+				if (critical_error_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), NULL, SND_SYNC);
+				}
+				else {
+					PlaySound(TEXT("Windows XP Battery Critical.wav"), NULL, SND_SYNC);
+				}
 				cout << "Enter password\n";
 				cin >> password_check;
 				system("cls");
@@ -127,7 +156,12 @@ int main() {
 		}
 		cout << "First Name\n";
 		cin >> first_name;
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), NULL, SND_SYNC);
+		if (task_completed_sound) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
+		else {
+			PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
 		system("cls");
 		cout << "Last Name\n";
 		cin >> last_name;
@@ -136,11 +170,9 @@ int main() {
 	else if (option_password == "N" || option_password == "n") {
 		cout << "First Name\n";
 		cin >> first_name;
-
 		system("cls");
 		cout << "Last Name\n";
 		cin >> last_name;
-
 		system("cls");
 	}
 	else {
@@ -148,13 +180,18 @@ int main() {
 	}
 		Setup se;								// <-- Setup
 		se.setupwiz();
-	
+
 	system("cls");
 	system("color 07");
 	cout << "Setup Complete\n";
 	system("color 07");
 	ofstream setupdone("setup.cpp");
-	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), NULL, SND_SYNC);
+	if (task_completed_sound) {
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	}
+	else {
+		PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	}
 	Sleep(1000);
 	cout << "A restart is required in order for the setup to apply the changes . . .\n";
 	Sleep(4000);
@@ -167,12 +204,15 @@ int main() {
 	system("cls");
 	cout << "Restart in 1 . . .\n";
 	Sleep(1000);
-
 	system("color 07");
-
-	
 	system("cls");
-	PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	if (shutdown_sound) {
+		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+	}
+	else {
+		PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+
+	}
 	for (int i = 0; i < 2; i++)
 	{
 		cout << "Restarting . " << endl;
@@ -184,9 +224,7 @@ int main() {
 		cout << "Restarting . . ." << endl;
 		Sleep(1000);
 		system("cls");
-
 	}
-
 	system("cls");
 	for (int i = 0; i < 2; i++)
 	{
@@ -208,14 +246,24 @@ int main() {
 			if (password != check) {
 				do {
 					cout << "Incorrect!\n";
-					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+					if (critical_error_sound) {
+						PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+					}
+					else {
+						PlaySound(TEXT("Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+					}
 					cout << "Enter password\n";
 					cin >> password_check;
 					system("cls");
 				} while (password != password_check);
 			}
 		}
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		if (startup_sound) {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
+		else {
+			PlaySound(TEXT("Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+		}
 		while (true) {
 			system("cls");
 			cout << "Welcome " << first_name << " " << last_name;															//<-- Main Menu
@@ -601,7 +649,12 @@ int main() {
 				cout << "A restart is required in order to apply the changes . . .\n";
 				Sleep(4000);
 				system("cls");
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				if (shutdown_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
 				for (int i = 0; i < 2; i++)
 				{
 					cout << "Restarting . " << endl;
@@ -628,25 +681,35 @@ int main() {
 					Sleep(1000);
 					system("cls");
 				}
-					if (option_password == "y" || option_password == "Y") {
+				if (option_password == "y" || option_password == "Y") {
 						cout << "Enter password ";
 						cin >> check;
 						system("cls");
 						if (password != check) {
 							do {
 								cout << "Incorrect!\n";
-								PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+								if (critical_error_sound) {
+									PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+								}
+								else {
+									PlaySound(TEXT("Windows XP Battery Critical.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+								}
 								cout << "Enter password\n";
 								cin >> password_check;
 								system("cls");
 							} while (password != password_check);
 						}
-					}
+				}
+				if (startup_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("Windows 2000 Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
 					continue;
 			}
 			if (main_menu == "alpha1") {
 				system("cls");
-
 				ptr2->funciton();
 				system("cls");													//<-- alpha1 Easter egg
 				break;
@@ -665,7 +728,12 @@ int main() {
 				continue;
 			}
 			if (main_menu == "0" || main_menu == "Logoff" || main_menu == "logout" || main_menu == "Logout") {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				if (shutdown_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("Windows 2000 Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}				
 				system("cls");
 				cout << "Shutting Down .";
 				Sleep(950);
@@ -709,19 +777,25 @@ int main() {
 				source source;							//<-- HAND Easter Egg
 				continue;
 			}
-			if (main_menu == "EXPONOS" || main_menu == "exponos") {
-				yfm ep;
-				continue;									//<-- EXPONOS Easter Egg
-			}
 			if (main_menu == "credits" || main_menu == "3") {
 				system("cls");
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				if (credits_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				}
+				else {
+					PlaySound(TEXT("win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+				}
 				cout << "Made by Angelo Petrai 2021\n";
 				cout << "Thank you for trying out my application\n";					//<-- Credits
 				cout << "Press any key to go back to the main menu . . .\n";
 				_getch();
 				system("cls");
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				if (task_completed_sound) {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("done.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}				
 				continue;
 			}
 			else if (main_menu == "2" || main_menu == "calculator") {
@@ -803,7 +877,6 @@ int main() {
 					system("cls");
 					system("start https://DuckDuckGo.com");
 					cout << "Press any key to go back to the main menu\n";
-
 					_getch();
 					system("cls");
 					continue;
@@ -812,19 +885,20 @@ int main() {
 					system("cls");
 					system("start https://Yahoo.com");
 					cout << "Press any key to go back to the main menu\n";
-
 					_getch();
 					system("cls");
 					continue;
 				}
-
 			}
-
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			if (error_sound) {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
+			else {
+				PlaySound(TEXT("Windows XP Critical Stop.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
 			MessageBox(NULL, L"Option is not Valid.\nUse integer value.\nIf the problem still persists relaunch EXPONOS.", L"Error", MB_OK | MB_ICONERROR);
 			continue;
 		}
-		continue;
+		 continue;
 	}
-
 }

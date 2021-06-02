@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EXPONOS Beta.cpp">
+    <ClCompile Include="exponos_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="exponos_features.cpp">
@@ -24,5 +24,10 @@
     <ClCompile Include="exponos_setup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="exponos_sources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

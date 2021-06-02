@@ -10,9 +10,22 @@
 
 using namespace std;
 
+
+	
+
+
 class Setup {
 public:
 	void setupfile() {
+		std::fstream task_completed_sound("done.wav");
+		std::fstream setup_sound("setup.wav");
+		std::fstream microsoft_sound("mssound.wav");
+		std::fstream credits_sound("win98.wav");
+		std::fstream startup_sound("Windows 2000 Logon Sound.wav");
+		std::fstream shutdown_sound("Windows 2000 Logoff Sound.wav");
+		std::fstream critical_error_sound("Windows XP Battery Critical.wav");
+		std::fstream notice_sound("ding.wav");
+		std::fstream error_sound("Windows XP Critical Stop.wav");
 		system("cls");
 		//PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\win98.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
 		for (int i = 0; i < 6; i++)
@@ -30,7 +43,12 @@ public:
 		fstream setupfile("setup.cpp");
 		if (setupfile) {
 			system("cls");
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			if (startup_sound) {
+				PlaySound(TEXT("Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
+			else {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows XP Logon Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
 			cout << "File found!";
 			Sleep(3000);
 			system("cls");
@@ -39,7 +57,12 @@ public:
 		else {
 			system("cls");
 
-			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			if (shutdown_sound) {
+				PlaySound(TEXT("Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
+			else {
+				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\Windows Logoff Sound.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+			}
 			MessageBox(NULL, L"File Not Found\nPlease go through the installation setup.", L"Error", MB_OK | MB_ICONERROR);
 			cout << "File Not Found!";
 			Sleep(3000);
@@ -49,7 +72,21 @@ public:
 	}
 	
 	void setupwiz() {
-		PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+		std::fstream task_completed_sound("done.wav");
+		std::fstream setup_sound("setup.wav");
+		std::fstream microsoft_sound("mssound.wav");
+		std::fstream credits_sound("win98.wav");
+		std::fstream startup_sound("Windows 2000 Logon Sound.wav");
+		std::fstream shutdown_sound("Windows 2000 Logoff Sound.wav");
+		std::fstream critical_error_sound("Windows XP Battery Critical.wav");
+		std::fstream notice_sound("ding.wav");
+		std::fstream error_sound("Windows XP Critical Stop.wav");
+		if (setup_sound) {
+			PlaySound(TEXT("setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+		}
+		else {
+			PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\setup.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC | SND_LOOP);
+		}
 		system("color 17");
 		cout << endl;
 		cout << " EXPONOS Setup 1.2 Release\n";
@@ -116,6 +153,15 @@ public:
 class texter {
 public:
 	void te() {
+		std::fstream task_completed_sound("done.wav");
+		std::fstream setup_sound("setup.wav");
+		std::fstream microsoft_sound("mssound.wav");
+		std::fstream credits_sound("win98.wav");
+		std::fstream startup_sound("Windows 2000 Logon Sound.wav");
+		std::fstream shutdown_sound("Windows 2000 Logoff Sound.wav");
+		std::fstream critical_error_sound("Windows XP Battery Critical.wav");
+		std::fstream notice_sound("ding.wav");
+		std::fstream error_sound("Windows XP Critical Stop.wav");
 		system("cls");
 		int opt;
 		ifstream docu_check("document1.txt");
@@ -145,7 +191,12 @@ public:
 				documentt << docu_write;
 			}
 			if (documentt) {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				if (notice_sound) {
+					PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
 				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 				system("pause");
 				system("cls");
@@ -160,8 +211,6 @@ public:
 			string docu_write2;
 			for (int i = 0; i < 999999999; i++)
 			{
-
-
 				getline(cin, docu_write2);
 				if (docu_write2 == "^") {
 					break;
@@ -174,21 +223,17 @@ public:
 				document << docu_write2;
 			}
 			if (document) {
-				PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
-
+				if (notice_sound) {
+					PlaySound(TEXT("ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
+				else {
+					PlaySound(TEXT("F:\\Programming\\EXPONOS\\EXPONOS Beta\\media\\ding.wav"), GetModuleHandle(NULL), SND_FILENAME | SND_ASYNC);
+				}
 				MessageBox(NULL, L"Document saved at app directory", L"Info", MB_OK | MB_ICONINFORMATION);
 				system("pause");
 				system("cls");
 			}
 		}
-
-
-
-
-
-
-
-
 	}
 
 };
